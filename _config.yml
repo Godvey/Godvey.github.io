@@ -23,9 +23,9 @@ repository               : "Godvey/godvey.github.io"
 author:
   # Biographic information
   avatar           : "yw.png"
-  name             : "Wei Yu"
-  pronouns         : "Dr."
-  bio              : "Assistant Professor"
+  name             : "Wei Yu, Ph.D."
+  pronouns         : "Assistant Professor"
+  bio              : "City University of Macau"
   location         : "Macao SAR, China"
   employer         : "City University of Macau"
   uri              : 
