@@ -23,7 +23,7 @@ repository               : "Godvey/godvey.github.io"
 author:
   # Biographic information
   avatar           : "yw.png"
-  name             : "Wei Yu (Fitz)"
+  name             : "Wei Yu"
   pronouns         : "Dr."
   bio              : "Assistant Professor at City University of Macau"
   location         : "Macao SAR, China"
@@ -56,7 +56,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
