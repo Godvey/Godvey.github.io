@@ -34,7 +34,31 @@
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ author.email }}</a></li>
+        <li style="display: flex; align-items: center;">
+          <a href="mailto:{{ author.email }}" id="author-email" style="margin-right: 8px;">
+            <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ author.email }}
+          </a>
+          <button onclick="copyEmail()" title="Copy Email" style="background: none; border: none; cursor: pointer; padding: 0; color: #666;">
+            <i class="far fa-copy" id="copy-icon"></i>
+          </button>
+        </li>
+      
+        <script>
+          function copyEmail() {
+            var email = "{{ author.email }}";
+            navigator.clipboard.writeText(email).then(function() {
+              var icon = document.getElementById('copy-icon');
+              icon.classList.remove('far', 'fa-copy');
+              icon.classList.add('fas', 'fa-check'); // 複製成功後圖標變為勾勾
+              icon.style.color = '#27ae60';
+              setTimeout(function() {
+                icon.classList.remove('fas', 'fa-check');
+                icon.classList.add('far', 'fa-copy');
+                icon.style.color = '#666';
+              }, 2000);
+            });
+          }
+        </script>
       {% endif %}
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
