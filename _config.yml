@@ -11,7 +11,7 @@ locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "L-ORE Lab"
 title_separator          : "|"
-name                     : &name "Wei Yu (Fitz)"
+name                     : &name "Wei Yu"
 description              : &description "L-ORE Lab: Low-altitude Optimal Robotics & Engineering"
 url                      : "https://godvey.github.io" 
 baseurl                  : "" # 這裡一定要改回空字符串，因為現在是一級域名了！
