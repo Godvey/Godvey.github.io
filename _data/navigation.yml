@@ -8,13 +8,13 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "Research&Publications"
+  - title: "Research & Publications"
     url: /publications/
 
-  - title: "Projects&Grants"
+  - title: "Projects & Grants"
     url: /year-archive/      
     
-  - title: "Our Lab"
+  - title: "L-ORE Lab"
     url: /portfolio/
 
   - title: "Teaching"
