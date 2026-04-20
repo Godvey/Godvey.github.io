@@ -11,47 +11,53 @@ author_profile: true
   .grant-section-header {
     font-size: 1.4em;
     font-weight: 700;
-    color: #2c3e50;
-    padding: 12px 15px;
-    background: #f8f9fa;
-    border-left: 5px solid #2980b9;
-    margin: 30px 0 20px 0;
-    display: flex;
-    align-items: center;
+    color: #ffffff; /* 標題改為白色，在深色背景下更清晰 */
+    padding: 12px 18px;
+    background: #2c3e50; /* 深藍灰色背景 */
+    border-left: 6px solid #2980b9; /* 保持鮮亮的藍色側邊條 */
+    border-radius: 4px; /* 增加一點點圓角，更有現代感 */
+    margin: 35px 0 22px 0;
   }
+  
   .grant-section-header.coi {
-    border-left-color: #7f8c8d;
-    background: #fcfcfc;
+    background: #546e7a; /* Co-I 部分使用稍淺一點的鋼鐵藍灰，以示區別 */
+    border-left-color: #90a4ae;
   }
+
   .project-card {
     padding: 10px 0 10px 20px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     position: relative;
+    border-bottom: 1px solid #f1f1f1; /* 每個項目加一條極淡的分割線，顯得更整齊 */
   }
+
   .project-card::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 15px;
+    top: 18px;
     width: 8px;
     height: 8px;
     background: #3498db;
     border-radius: 50%;
   }
+
   .coi .project-card::before {
     background: #bdc3c7;
   }
+
   .project-title {
     font-weight: 600;
     font-size: 1.1em;
     color: #1a252f;
     line-height: 1.4;
   }
+
   .project-meta {
     display: block;
     font-size: 0.92em;
     color: #5d6d7e;
-    margin-top: 4px;
+    margin-top: 5px;
   }
 </style>
 
