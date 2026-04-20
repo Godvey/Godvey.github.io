@@ -84,9 +84,9 @@ author:
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
   manuscripts:
-    title: 'Journal Articles'
+    title: 'Journal'
   conferences:
-    title: 'Conference Papers'
+    title: 'Conference'
   preprints:
     title: 'Preprints & Under Review'  # 您可以改成任何想顯示的標題'
 
