@@ -1,16 +1,46 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Activities"
 permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<h2 style="border-bottom: 2px solid #2980b9; color: #2c3e50;">🎤 Talks & Presentations</h2>
 
-{% endif %}
+<div style="margin-top: 20px;">
+  <div style="margin-bottom: 30px; padding-left: 15px; border-left: 4px solid #3498db;">
+    <span style="font-weight: bold; font-size: 1.15em; color: #2c3e50;">Conference Proceeding Talk on UAV Swarm Coordination</span><br>
+    <i class="fas fa-calendar-alt" style="color: #7f8c8d;"></i> <small>March 01, 2026</small> | 
+    <i class="fas fa-map-marker-alt" style="color: #7f8c8d;"></i> <small>City University of Macau, Macau SAR</small>
+    <p style="margin-top: 5px; font-size: 0.95em; color: #555;">Presented our latest findings on partial-perception-driven formation frameworks for UAV swarms.</p>
+  </div>
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+  <div style="margin-bottom: 30px; padding-left: 15px; border-left: 4px solid #3498db;">
+    <span style="font-weight: bold; font-size: 1.15em; color: #2c3e50;">Invited Seminar: Robust Control for Nonlinear Systems</span><br>
+    <i class="fas fa-calendar-alt" style="color: #7f8c8d;"></i> <small>May 10, 2026</small> | 
+    <i class="fas fa-map-marker-alt" style="color: #7f8c8d;"></i> <small>DDCLS Conference (Finalist Presentation)</small>
+    <p style="margin-top: 5px; font-size: 0.95em; color: #555;">Detailed discussion on robust and nonlinear control strategies featured in IJRNC.</p>
+  </div>
+</div>
+
+<h2 style="border-bottom: 2px solid #e67e22; color: #2c3e50; margin-top: 50px;">📢 Recruitment & Events</h2>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">
+  
+  <div style="width: 48%; background: #fffcf5; border: 1px solid #f39c12; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <span style="display: inline-block; background: #f39c12; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px;">Open Recruitment</span><br>
+    <span style="font-weight: bold; font-size: 1.1em; color: #d35400;">L-ORE Lab Summer Camp 2026</span>
+    <p style="font-size: 0.9em; margin: 10px 0;">We invite talented students from Sun Yat-sen University and other institutions to join our summer research program on robotics.</p>
+    <a href="#" style="color: #e67e22; font-weight: bold; text-decoration: none;">Apply Now →</a>
+  </div>
+
+  <div style="width: 48%; background: #f4f9ff; border: 1px solid #3498db; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <span style="display: inline-block; background: #3498db; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-bottom: 10px;">Competitions</span><br>
+    <span style="font-weight: bold; font-size: 1.1em; color: #2980b9;">RoboMaster Swarm Challenge</span>
+    <p style="font-size: 0.9em; margin: 10px 0;">Internal selection for the upcoming DJI RoboMaster robotics competition. Open to all FDS students.</p>
+    <a href="#" style="color: #3498db; font-weight: bold; text-decoration: none;">Read More →</a>
+  </div>
+
+</div>
