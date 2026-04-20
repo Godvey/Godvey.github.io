@@ -7,46 +7,105 @@ author_profile: true
 
 {% include base_path %}
 
-<h2 style="border-bottom: 2px solid #2980b9; color: #2c3e50;">🟢 As Principal Investigator (PI)</h2>
-<ul style="list-style-type: disc; padding-left: 25px;">
-  <li style="margin-bottom: 15px;">
-    <span style="font-weight: bold; font-size: 1.1em;">Collaborative Maneuver Control of UAVs for Cross-Domain Missions</span><br>
-    <span style="color: #555;">The Science and Technology Development Fund (FDCT), Macao SAR. Dec 2025 – Dec 2027</span>
-  </li>
-</ul>
+<style>
+  .grant-section-header {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #2c3e50;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-left: 5px solid #2980b9;
+    margin: 30px 0 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  .grant-section-header.coi {
+    border-left-color: #7f8c8d;
+    background: #fcfcfc;
+  }
+  .project-card {
+    padding: 10px 0 10px 20px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  .project-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+    background: #3498db;
+    border-radius: 50%;
+  }
+  .coi .project-card::before {
+    background: #bdc3c7;
+  }
+  .project-title {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #1a252f;
+    line-height: 1.4;
+  }
+  .project-meta {
+    display: block;
+    font-size: 0.92em;
+    color: #5d6d7e;
+    margin-top: 4px;
+  }
+</style>
 
-<h2 style="border-bottom: 2px solid #7f8c8d; color: #2c3e50; margin-top: 40px;">🔵 As Co-Investigator (Co-I) / Participant</h2>
-<ul style="list-style-type: disc; padding-left: 25px;">
-  <li style="margin-bottom: 12px;">
-    <b>Swarm Intelligence Inspired Autonomous Control for UAV Search and Rescue in Forest Environments</b><br>
-    <small>General Program, National Natural Science Foundation of China (NSFC), 2025 – 2028</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Design and Application of Dual-Layer Safety Envelopes for UAV Swarm Systems</b><br>
-    <small>General Program, National Natural Science Foundation of China (NSFC), 2024 – 2027</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Optimization and Application of Swarm Coordination Algorithms</b><br>
-    <small>National-Level Technology Innovation Project, 2023.01 – 2024.12</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Learning-Based Control for Ground-Based Vision-Guided UAV Approach and Landing</b><br>
-    <small>General Program, National Natural Science Foundation of China (NSFC), 2020 – 2023</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Heuristic Algorithm Design and Scenario Adaptation</b><br>
-    <small>National-Level Technology Innovation Project, 2020.09 – 2022.12</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Cloud-Based Deployment and Implementation of Swarm Algorithms</b><br>
-    <small>National-Level Technology Innovation Project, 2020.09 – 2022.12</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Hardware-in-the-loop Platform Construction for Swarm Robotics</b><br>
-    <small>National-Level Technology Innovation Project, 2020.09 – 2022.12</small>
-  </li>
-  <li style="margin-bottom: 12px;">
-    <b>Integrated Research on Swarm Algorithm Mechanisms and System Integration</b><br>
-    <small>National-Level Technology Innovation Project, 2020.09 – 2022.12</small>
-  </li>
-</ul>
+<div class="grant-section-header">
+  Principal Investigator (PI)
+</div>
+
+<div class="project-card">
+  <span class="project-title">Collaborative Maneuver Control of UAVs for Cross-Domain Missions</span>
+  <span class="project-meta">The Science and Technology Development Fund (FDCT), Macao SAR. Dec 2025 – Dec 2027</span>
+</div>
+
+<div class="grant-section-header coi">
+  Co-Investigator (Co-I) / Participant
+</div>
+
+<div class="coi">
+  <div class="project-card">
+    <span class="project-title">Swarm Intelligence Inspired Autonomous Control for UAV Search and Rescue in Forest Environments</span>
+    <span class="project-meta">General Program, National Natural Science Foundation of China (NSFC), 2025 – 2028</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Design and Application of Dual-Layer Safety Envelopes for UAV Swarm Systems</span>
+    <span class="project-meta">General Program, National Natural Science Foundation of China (NSFC), 2024 – 2027</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Optimization and Application of Swarm Coordination Algorithms</span>
+    <span class="project-meta">National-Level Technology Innovation Project, 2023.01 – 2024.12</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Learning-Based Control for Ground-Based Vision-Guided UAV Approach and Landing</span>
+    <span class="project-meta">General Program, National Natural Science Foundation of China (NSFC), 2020 – 2023</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Heuristic Algorithm Design and Scenario Adaptation</span>
+    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Cloud-Based Deployment and Implementation of Swarm Algorithms</span>
+    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Hardware-in-the-loop Platform Construction for Swarm Robotics</span>
+    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </div>
+
+  <div class="project-card">
+    <span class="project-title">Integrated Research on Swarm Algorithm Mechanisms and System Integration</span>
+    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </div>
+</div>
