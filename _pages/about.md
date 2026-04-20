@@ -1,6 +1,7 @@
 ---
 permalink: /
-title: "Wei Yu (余蔚)"
+# 這裡將標題留空，防止模板自動生成頂部大標題
+title: "" 
 author_profile: true
 redirect_from: 
   - /about/
@@ -10,10 +11,15 @@ redirect_from:
 {% include base_path %}
 
 <style>
+  /* 隱藏可能殘留的頁面標題（針對某些模板） */
+  .page__title {
+    display: none !important;
+  }
+
   /* 1. 寬幅佈局容器 */
   .main-wrapper {
     width: 100%;
-    max-width: 1200px; /* 增加最大寬度 */
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -29,7 +35,7 @@ redirect_from:
   .bio-column { flex: 1; }
 
   .section-title {
-    font-size: 1.3em;
+    font-size: 1.35em;
     font-weight: bold;
     color: #2c3e50;
     border-bottom: 2px solid #e1e4e8;
@@ -48,11 +54,13 @@ redirect_from:
     width: 60px;
     height: 60px;
     margin-right: 15px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #f8f9fa;
   }
 
   .edu-info { line-height: 1.4; }
-  .uni-name { font-weight: 700; color: #1a252f; }
+  .uni-name { font-weight: 700; color: #1a252f; font-size: 1.05em; }
   .deg-name { color: #5d6d7e; font-size: 0.92em; font-style: italic; }
 
   /* 簡介樣式 */
@@ -99,7 +107,7 @@ redirect_from:
     color: #2c3e50;
   }
 
-  /* 4. 新聞列表樣式 (按您的要求) */
+  /* 4. 新聞列表樣式 */
   .news-list {
     list-style-type: none;
     padding-left: 0;
@@ -123,7 +131,7 @@ redirect_from:
     margin-right: 10px;
   }
 
-  /* 響應式：手機端自動堆疊 */
+  /* 響應式佈局 */
   @media (max-width: 900px) {
     .top-section { flex-direction: column; }
     .interests-grid { grid-template-columns: repeat(2, 1fr); }
@@ -135,22 +143,25 @@ redirect_from:
   <div class="top-section">
     <div class="edu-column">
       <div class="section-title">Education</div>
+      
       <div class="edu-item">
-        <img src="/images/logos/sysu_logo.png" class="edu-logo" alt="SYSU">
+        <img src="/images/bio-photo.jpg" class="edu-logo" alt="SYSU">
         <div class="edu-info">
           <div class="uni-name">Sun Yat-sen University</div>
           <div class="deg-name">Ph.D. in Aerospace Science and Technology</div>
         </div>
       </div>
+      
       <div class="edu-item">
-        <img src="/images/logos/sysu_logo.png" class="edu-logo" alt="SYSU">
+        <img src="/images/bio-photo.jpg" class="edu-logo" alt="SYSU">
         <div class="edu-info">
           <div class="uni-name">Sun Yat-sen University</div>
           <div class="deg-name">M.Sc. in Surveying and Mapping Engineering</div>
         </div>
       </div>
+      
       <div class="edu-item">
-        <img src="/images/logos/cug_logo.png" class="edu-logo" alt="CUG">
+        <img src="/images/bio-photo.jpg" class="edu-logo" alt="CUG">
         <div class="edu-info">
           <div class="uni-name">China University of Geosciences</div>
           <div class="deg-name">B.Sc. in Remote Sensing Science and Technology</div>
