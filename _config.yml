@@ -88,7 +88,7 @@ publication_category:
   conferences:
     title: 'Conference'
   preprints:
-    title: 'Preprints & Under Review'  # 您可以改成任何想顯示的標題'
+    title: 'Preprints'  # 您可以改成任何想顯示的標題'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
