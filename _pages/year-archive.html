@@ -12,13 +12,13 @@ author_profile: true
   .grant-header-bar {
     background-color: #34495e; /* PI 色帶顏色 */
     color: #ffffff;
-    padding: 6px 15px;      /* 關鍵修改：將上下 padding 從原來的 12px-15px 縮小到 6px */
+    padding: 6px 15px;      /* 縮窄後的上下邊距 */
     border-radius: 4px;
-    margin-top: 25px;       /* 調整上方間距 */
-    margin-bottom: 15px;    /* 調整與下方列表的間距 */
+    margin-top: 25px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    border-left: 5px solid #2980b9; /* 保持左側強調色 */
+    border-left: 5px solid #2980b9;
   }
 
   .grant-header-bar.co-i {
@@ -27,10 +27,35 @@ author_profile: true
   }
 
   .grant-header-bar h3 {
-    margin: 0;              /* 清除標題默認邊距，防止撐開色帶 */
-    font-size: 1.15em;      /* 稍微縮小字號，顯得更精緻 */
-    line-height: 1.2;       /* 壓縮行高 */
+    margin: 0;
+    font-size: 1.15em;
+    line-height: 1.2;
     color: #ffffff !important;
+    font-weight: 600;
+  }
+
+  /* 項目列表樣式優化 */
+  .project-list-clean {
+    list-style-type: none;
+    padding-left: 5px;
+    margin-bottom: 30px;
+  }
+
+  .project-item-clean {
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  .project-title-text {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 1.05em;
+    display: block;
+  }
+
+  .project-meta-text {
+    color: #7f8c8d;
+    font-size: 0.92em;
   }
 </style>
 
@@ -38,10 +63,10 @@ author_profile: true
   <h3>Principal Investigator (PI)</h3>
 </div>
 
-<ul class="news-list">
-  <li class="news-item" style="border:none; margin-bottom: 20px;">
-    <b style="color: #2c3e50; font-size: 1.05em;">Collaborative Maneuver Control of UAVs for Cross-Domain Missions</b><br>
-    <span style="color: #7f8c8d; font-size: 0.9em;">The Science and Technology Development Fund (FDCT), Macao SAR. Dec 2025 – Dec 2027</span>
+<ul class="project-list-clean">
+  <li class="project-item-clean">
+    <span class="project-title-text">Collaborative Maneuver Control of UAVs for Cross-Domain Missions</span>
+    <span class="project-meta-text">The Science and Technology Development Fund (FDCT), Macao SAR. Dec 2025 – Dec 2027</span>
   </li>
 </ul>
 
@@ -49,45 +74,44 @@ author_profile: true
   <h3>Co-Investigator (Co-I) / Participant</h3>
 </div>
 
-<ul class="news-list">
-  <li class="news-item" style="border:none;">
-    <b style="color: #2c3e50; font-size: 1.05em;">Swarm Intelligence Inspired Autonomous Control for UAV Search and Rescue in Forest Environments</b><br>
-    <span style="color: #7f8c8d; font-size: 0.9em;">General Program, National Natural Science Foundation of China (NSFC), 2025 – 2028</span>
+<ul class="project-list-clean">
+  <li class="project-item-clean">
+    <span class="project-title-text">Swarm Intelligence Inspired Autonomous Control for UAV Search and Rescue in Forest Environments</span>
+    <span class="project-meta-text">General Program, National Natural Science Foundation of China (NSFC), 2025 – 2028</span>
   </li>
-  </ul>
 
-  <div class="project-card">
-    <span class="project-title">Design and Application of Dual-Layer Safety Envelopes for UAV Swarm Systems</span>
-    <span class="project-meta">General Program, National Natural Science Foundation of China (NSFC), 2024 – 2027</span>
-  </div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Design and Application of Dual-Layer Safety Envelopes for UAV Swarm Systems</span>
+    <span class="project-meta-text">General Program, National Natural Science Foundation of China (NSFC), 2024 – 2027</span>
+  </li>
 
-  <div class="project-card">
-    <span class="project-title">Optimization and Application of Swarm Coordination Algorithms</span>
-    <span class="project-meta">National-Level Technology Innovation Project, 2023.01 – 2024.12</span>
-  </div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Optimization and Application of Swarm Coordination Algorithms</span>
+    <span class="project-meta-text">National-Level Technology Innovation Project, 2023.01 – 2024.12</span>
+  </li>
 
-  <div class="project-card">
-    <span class="project-title">Learning-Based Control for Ground-Based Vision-Guided UAV Approach and Landing</span>
-    <span class="project-meta">General Program, National Natural Science Foundation of China (NSFC), 2020 – 2023</span>
-  </div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Learning-Based Control for Ground-Based Vision-Guided UAV Approach and Landing</span>
+    <span class="project-meta-text">General Program, National Natural Science Foundation of China (NSFC), 2020 – 2023</span>
+  </li>
 
-  <div class="project-card">
-    <span class="project-title">Heuristic Algorithm Design and Scenario Adaptation</span>
-    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
-  </div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Heuristic Algorithm Design and Scenario Adaptation</span>
+    <span class="project-meta-text">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </li>
 
-  <div class="project-card">
-    <span class="project-title">Cloud-Based Deployment and Implementation of Swarm Algorithms</span>
-    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
-  </div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Cloud-Based Deployment and Implementation of Swarm Algorithms</span>
+    <span class="project-meta-text">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </li>
 
-  <div class="project-card">
-    <span class="project-title">Hardware-in-the-loop Platform Construction for Swarm Robotics</span>
-    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
-  </div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Hardware-in-the-loop Platform Construction for Swarm Robotics</span>
+    <span class="project-meta-text">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </li>
 
-  <div class="project-card">
-    <span class="project-title">Integrated Research on Swarm Algorithm Mechanisms and System Integration</span>
-    <span class="project-meta">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
-  </div>
-</div>
+  <li class="project-item-clean">
+    <span class="project-title-text">Integrated Research on Swarm Algorithm Mechanisms and System Integration</span>
+    <span class="project-meta-text">National-Level Technology Innovation Project, 2020.09 – 2022.12</span>
+  </li>
+</ul>
