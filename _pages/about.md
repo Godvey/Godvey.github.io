@@ -10,145 +10,258 @@ redirect_from:
 {% include base_path %}
 
 <style>
-  /* Education & About Container */
-  .education-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+  /* 全頁寬幅容器 */
+  .home-full-width-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  /* 頂部三欄佈局 (Education, Bio, Interests) */
+  .top-grid-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr; /* 三欄比例：教育稍寬，其餘均分 */
+    gap: 30px;
     margin-bottom: 40px;
+    align-items: flex-start;
   }
 
-  /* Left Side: Education Timeline */
-  .education-list {
-    flex: 1.2;
+  /* 欄目共同樣式 */
+  .grid-column {
+    background: #ffffff;
   }
 
+  /* 欄目標題樣式 */
+  .column-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e1e4e8;
+  }
+
+  /* === 1. 教育背景樣式 === */
   .edu-item {
     display: flex;
     align-items: center;
-    margin-bottom: 22px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f6f8fa;
   }
 
   .edu-logo {
-    width: 65px;
-    height: 65px;
-    margin-right: 20px;
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
     object-fit: contain;
+    flex-shrink: 0;
   }
 
   .edu-info {
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   .university-name {
     font-weight: 700;
-    font-size: 1.1em;
-    color: #2c3e50;
+    font-size: 1em;
+    color: #1a252f;
   }
 
   .degree-major {
     color: #5d6d7e;
-    font-size: 0.95em;
+    font-size: 0.9em;
     font-style: italic;
   }
 
-  /* Right Side: Biography */
-  .about-text {
-    flex: 1;
+  /* === 2. 個人簡介與研究興趣樣式 === */
+  .text-content {
     line-height: 1.8;
     text-align: justify;
     color: #34495e;
-    font-size: 1.05em;
+    font-size: 1em;
   }
 
-  /* Responsive Design for Mobile */
-  @media (max-width: 768px) {
-    .education-container {
-      flex-direction: column;
-    }
-    .edu-logo {
-      width: 50px;
-      height: 50px;
-    }
+  .interests-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
   }
 
-  /* News List Style */
+  .interest-item {
+    background: #fdfdfd;
+    border: 1px solid #eaecef;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+  }
+
+  .interest-item:hover {
+    background: #fcfcfc;
+    border-color: #2980b9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  }
+
+  .interest-icon {
+    font-size: 1.2em;
+    margin-right: 12px;
+    color: #3498db;
+  }
+
+  /* === 底部 News 部分寬幅優化 === */
+  .news-header {
+    border-bottom: 2px solid #2c3e50;
+    color: #2c3e50;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+  }
+
   .news-list {
     list-style-type: none;
     padding-left: 0;
   }
 
   .news-item {
-    margin-bottom: 12px;
-    padding-left: 10px;
-    border-left: 3px solid #f1f1f1;
-    transition: border-left 0.3s;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    background: #fdfdfd;
+    border: 1px solid #eaecef;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .news-item:hover {
-    border-left: 3px solid #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-color: #d1d5da;
   }
 
-  .news-date {
+  .news-date-tag {
     font-weight: bold;
-    color: #2980b9;
-    margin-right: 10px;
+    color: #ffffff;
+    background: #2980b9;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    margin-right: 18px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  .news-content {
+    flex: 1;
+    color: #24292e;
+    line-height: 1.5;
+  }
+
+  /* === 響應式：手機端自動變為單欄 === */
+  @media (max-width: 992px) {
+    .top-grid-container {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
-<h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px;">About Me</h2>
-
-<div class="education-container">
+<div class="home-full-width-container">
   
-  <div class="education-list">
+  <h2 style="display:none;">About Me</h2> <div class="top-grid-container">
     
-    <div class="edu-item">
-      <img src="/images/logos/sysu_logo.png" class="edu-logo" alt="SYSU">
-      <div class="edu-info">
-        <div class="university-name">Sun Yat-sen University</div>
-        <div class="degree-major">Ph.D. in Aerospace Science and Technology</div>
+    <div class="grid-column">
+      <p class="column-header">Education</p>
+      
+      <div class="edu-item">
+        <img src="/images/logos/sysu_logo.png" class="edu-logo" alt="SYSU">
+        <div class="edu-info">
+          <div class="university-name">Sun Yat-sen University</div>
+          <div class="degree-major">Ph.D. in Aerospace Science and Technology</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <img src="/images/logos/sysu_logo.png" class="edu-logo" alt="SYSU">
+        <div class="edu-info">
+          <div class="university-name">Sun Yat-sen University</div>
+          <div class="degree-major">M.Sc. in Surveying and Mapping Engineering</div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <img src="/images/logos/cug_logo.png" class="edu-logo" alt="CUG">
+        <div class="edu-info">
+          <div class="university-name">China University of Geosciences</div>
+          <div class="degree-major">B.Sc. in Remote Sensing Science and Technology</div>
+        </div>
       </div>
     </div>
 
-    <div class="edu-item">
-      <img src="/images/logos/sysu_logo.png" class="edu-logo" alt="SYSU">
-      <div class="edu-info">
-        <div class="university-name">Sun Yat-sen University</div>
-        <div class="degree-major">M.Sc. in Surveying and Mapping Engineering</div>
+    <div class="grid-column">
+      <p class="column-header">Biography</p>
+      <div class="text-content">
+        Dr. Wei Yu is an Assistant Professor at the Faculty of Data Science, City University of Macau. Prior to his current appointment, he conducted postdoctoral research at the <b>Oxford Robotics Institute, University of Oxford</b>. His work aims to bridge the gap between theoretical control frameworks and real-world robotics applications. Our lab is actively looking for motivated students interested in joining us.
       </div>
     </div>
 
-    <div class="edu-item">
-      <img src="/images/logos/cug_logo.png" class="edu-logo" alt="CUG">
-      <div class="edu-info">
-        <div class="university-name">China University of Geosciences</div>
-        <div class="degree-major">B.Sc. in Remote Sensing Science and Technology</div>
-      </div>
+    <div class="grid-column">
+      <p class="column-header">Research Interests</p>
+      <ul class="interests-list">
+        <li class="interest-item">
+          <i class="fas fa-robot interest-icon">
+            </i>
+          <span>UAV Swarm Coordination</span>
+        </li>
+        <li class="interest-item">
+          <i class="fas fa-microchip interest-icon"></i>
+          <span>Robust & Nonlinear Control</span>
+        </li>
+        <li class="interest-item">
+          <i class="fas fa-search-location interest-icon"></i>
+          <span>Autonomous Navigation</span>
+        </li>
+        <li class="interest-item">
+          <i class="fas fa-cogs interest-icon"></i>
+          <span>Robotics Applications</span>
+        </li>
+      </ul>
     </div>
 
   </div>
 
-  <div class="about-text">
-    Dr. Wei Yu is an Assistant Professor at the Faculty of Data Science, City University of Macau. His research interests primarily focus on <b>UAV swarm coordination</b>, <b>robust and nonlinear control theory</b>, and autonomous navigation in complex environments. Prior to his current appointment, he conducted postdoctoral research at the <b>University of Oxford</b>. His work aims to bridge the gap between theoretical control frameworks and real-world robotics applications.
-  </div>
+  <p class="news-header">Latest News</p>
+  
+  <ul class="news-list">
+    <li class="news-item">
+      <span class="news-date-tag">Apr 2026</span>
+      <div class="news-content">
+        Our paper on UAV formation control was accepted for presentation at ICGNC 2026.
+      </div>
+    </li>
+    <li class="news-item">
+      <span class="news-date-tag">Aug 2024</span>
+      <div class="news-content">
+        Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.
+      </div>
+    </li>
+    <li class="news-item">
+      <span class="news-date-tag">May 2024</span>
+      <div class="news-content">
+        Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.
+      </div>
+    </li>
+    <li class="news-item">
+      <span class="news-date-tag">Feb 2023</span>
+      <div class="news-content">
+        Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.
+      </div>
+    </li>
+  </ul>
 
 </div>
-
-<h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
-<ul class="news-list">
-  <li class="news-item">
-    <span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.
-  </li>
-  <li class="news-item">
-    <span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.
-  </li>
-  <li class="news-item">
-    <span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.
-  </li>
-  <li class="news-item">
-    <span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.
-  </li>
-</ul>
