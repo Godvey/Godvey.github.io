@@ -11,21 +11,33 @@ author_profile: true
 
 {% include base_path %}
 
-<div class="list__item">
-  <ul style="list-style-type: disc; padding-left: 20px;">
-    {% for post in site.publications reversed %}
-      <li style="margin-bottom: 15px;">
-        <span style="font-weight: bold; color: #2980b9;">{{ post.title }}</span><br>
-        
-        <span style="font-size: 0.95em;">Published in <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</span><br>
-        
-        <span style="font-size: 0.9em; color: #555;">
-          {{ post.citation }}
-          {% if post.paperurl %}
-            <a href="{{ post.paperurl }}" target="_blank" style="margin-left: 10px; color: #e74c3c; font-weight: bold;">[PDF]</a>
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    
+    <h2 id="{{ category[0] }}" style="margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 10px;">{{ category[1].title }}</h2>
+
+    <div class="list__item">
+      <ul style="list-style-type: disc; padding-left: 20px;">
+        {% for post in site.publications reversed %}
+          {% if post.category == category[0] %}
+            
+            <li style="margin-bottom: 15px;">
+              <span style="font-weight: bold; color: #2980b9;">{{ post.title }}</span><br>
+              
+              <span style="font-size: 0.95em;">Published in <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</span><br>
+              
+              <span style="font-size: 0.9em; color: #555;">
+                {{ post.citation }}
+                {% if post.paperurl %}
+                  <a href="{{ post.paperurl }}" target="_blank" style="margin-left: 10px; color: #e74c3c; font-weight: bold;">[PDF]</a>
+                {% endif %}
+              </span>
+            </li>
+
           {% endif %}
-        </span>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+        {% endfor %}
+      </ul>
+    </div>
+
+  {% endfor %}
+{% endif %}
