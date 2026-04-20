@@ -8,77 +8,53 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  .grant-section-header {
-    font-size: 1.4em;
-    font-weight: 700;
-    color: #ffffff; /* 標題改為白色，在深色背景下更清晰 */
-    padding: 12px 18px;
-    background: #2c3e50; /* 深藍灰色背景 */
-    border-left: 6px solid #2980b9; /* 保持鮮亮的藍色側邊條 */
-    border-radius: 4px; /* 增加一點點圓角，更有現代感 */
-    margin: 35px 0 22px 0;
-  }
-  
-  .grant-section-header.coi {
-    background: #546e7a; /* Co-I 部分使用稍淺一點的鋼鐵藍灰，以示區別 */
-    border-left-color: #90a4ae;
+  /* 針對色帶標題的優化樣式 */
+  .grant-header-bar {
+    background-color: #34495e; /* PI 色帶顏色 */
+    color: #ffffff;
+    padding: 6px 15px;      /* 關鍵修改：將上下 padding 從原來的 12px-15px 縮小到 6px */
+    border-radius: 4px;
+    margin-top: 25px;       /* 調整上方間距 */
+    margin-bottom: 15px;    /* 調整與下方列表的間距 */
+    display: flex;
+    align-items: center;
+    border-left: 5px solid #2980b9; /* 保持左側強調色 */
   }
 
-  .project-card {
-    padding: 10px 0 10px 20px;
-    margin-bottom: 18px;
-    position: relative;
-    border-bottom: 1px solid #f1f1f1; /* 每個項目加一條極淡的分割線，顯得更整齊 */
+  .grant-header-bar.co-i {
+    background-color: #5d6d7e; /* Co-I 色帶顏色 */
+    border-left: 5px solid #bdc3c7;
   }
 
-  .project-card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 18px;
-    width: 8px;
-    height: 8px;
-    background: #3498db;
-    border-radius: 50%;
-  }
-
-  .coi .project-card::before {
-    background: #bdc3c7;
-  }
-
-  .project-title {
-    font-weight: 600;
-    font-size: 1.1em;
-    color: #1a252f;
-    line-height: 1.4;
-  }
-
-  .project-meta {
-    display: block;
-    font-size: 0.92em;
-    color: #5d6d7e;
-    margin-top: 5px;
+  .grant-header-bar h3 {
+    margin: 0;              /* 清除標題默認邊距，防止撐開色帶 */
+    font-size: 1.15em;      /* 稍微縮小字號，顯得更精緻 */
+    line-height: 1.2;       /* 壓縮行高 */
+    color: #ffffff !important;
   }
 </style>
 
-<div class="grant-section-header">
-  Principal Investigator (PI)
+<div class="grant-header-bar">
+  <h3>Principal Investigator (PI)</h3>
 </div>
 
-<div class="project-card">
-  <span class="project-title">Collaborative Maneuver Control of UAVs for Cross-Domain Missions</span>
-  <span class="project-meta">The Science and Technology Development Fund (FDCT), Macao SAR. Dec 2025 – Dec 2027</span>
+<ul class="news-list">
+  <li class="news-item" style="border:none; margin-bottom: 20px;">
+    <b style="color: #2c3e50; font-size: 1.05em;">Collaborative Maneuver Control of UAVs for Cross-Domain Missions</b><br>
+    <span style="color: #7f8c8d; font-size: 0.9em;">The Science and Technology Development Fund (FDCT), Macao SAR. Dec 2025 – Dec 2027</span>
+  </li>
+</ul>
+
+<div class="grant-header-bar co-i">
+  <h3>Co-Investigator (Co-I) / Participant</h3>
 </div>
 
-<div class="grant-section-header coi">
-  Co-Investigator (Co-I) / Participant
-</div>
-
-<div class="coi">
-  <div class="project-card">
-    <span class="project-title">Swarm Intelligence Inspired Autonomous Control for UAV Search and Rescue in Forest Environments</span>
-    <span class="project-meta">General Program, National Natural Science Foundation of China (NSFC), 2025 – 2028</span>
-  </div>
+<ul class="news-list">
+  <li class="news-item" style="border:none;">
+    <b style="color: #2c3e50; font-size: 1.05em;">Swarm Intelligence Inspired Autonomous Control for UAV Search and Rescue in Forest Environments</b><br>
+    <span style="color: #7f8c8d; font-size: 0.9em;">General Program, National Natural Science Foundation of China (NSFC), 2025 – 2028</span>
+  </li>
+  </ul>
 
   <div class="project-card">
     <span class="project-title">Design and Application of Dual-Layer Safety Envelopes for UAV Swarm Systems</span>
