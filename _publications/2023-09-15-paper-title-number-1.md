@@ -2,7 +2,6 @@
 title: "Enhanced Affine Formation Maneuver Control Using Historical Velocity Command (HVC)"
 collection: publications
 category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
 date: 2023-09-15
 venue: 'IEEE Robotics and Automation Letters'
 paperurl: 'https://academicpages.github.io/files/paper1.pdf'
