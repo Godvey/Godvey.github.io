@@ -2,8 +2,6 @@
 title: "Enhanced affine formation maneuver control using historical acceleration command"
 collection: publications
 category: manuscripts
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
 date: 2023-08-29
 venue: 'International Journal of Robust and Nonlinear Control'
 slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
