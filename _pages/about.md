@@ -12,21 +12,22 @@ redirect_from:
 <style>
   .page__title { display: none !important; }
 
+  /* 1. 寬幅佈局優化：增加 max-width 使頁面更寬 */
   .main-wrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px; 
     margin: 0 auto;
   }
 
-  /* 頂部佈局：Biography 在左 (flex: 1.2)，經歷在右 (flex: 1) */
+  /* 2. 頂部佈局比例：加大 bio 權重 (1.6)，增加間距 */
   .top-section {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
+    gap: 60px;
     margin-bottom: 30px;
   }
 
-  .bio-column { flex: 1.2; }
+  .bio-column { flex: 1.6; }
   .exp-edu-column { flex: 1; min-width: 380px; }
 
   .section-title {
@@ -38,19 +39,19 @@ redirect_from:
     margin-bottom: 20px;
   }
 
-  /* 簡介文字樣式 */
+  /* 3. Biography 專屬樣式：字體更小、行距更緊湊 */
   .bio-text {
-    line-height: 1.8;
+    line-height: 1.5; /* 縮小行間距 */
     text-align: justify;
     color: #34495e;
-    font-size: 1.05em;
+    font-size: 0.94em; /* 縮小字體 */
   }
 
   /* 經歷與教育項通用樣式 */
   .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .info-logo {
@@ -61,9 +62,9 @@ redirect_from:
     background: #ffffff;
   }
 
-  .info-content { line-height: 1.4; }
+  .info-content { line-height: 1.3; }
   .info-name { font-weight: 700; color: #1a252f; font-size: 1.02em; }
-  .info-desc { color: #5d6d7e; font-size: 0.92em; font-style: italic; }
+  .info-desc { color: #5d6d7e; font-size: 0.9em; font-style: italic; }
 
   /* 研究興趣卡片佈局 */
   .interests-grid {
@@ -94,7 +95,7 @@ redirect_from:
   .interest-card i { font-size: 1.5em; color: #3498db; }
   .interest-card span { font-size: 0.95em; font-weight: 600; color: #2c3e50; }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     .top-section { flex-direction: column; }
     .interests-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -103,7 +104,7 @@ redirect_from:
 <div class="main-wrapper">
 
   <div class="top-section">
-<div class="bio-column">
+    <div class="bio-column">
       <div class="section-title">Biography</div>
       <div class="bio-text">
         I am <b>Wei Yu</b>, an Assistant Professor and Master Supervisor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences, where I earned my B.Eng. in Remote Sensing (2017). I then moved to Sun Yat-sen University, completing both my M.Sc. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
@@ -171,7 +172,7 @@ redirect_from:
     </div>
   </div>
 
-  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
+  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px; font-size: 1.4em;">News</h2>
 
   <div class="news-wrapper">
     <input type="checkbox" id="news-toggle" style="display: none;">
@@ -200,6 +201,7 @@ redirect_from:
       padding-left: 10px; 
       border-left: 3px solid #f1f1f1; 
       line-height: 1.6;
+      font-size: 0.95em;
       transition: border-left 0.3s;
     }
     .news-item:hover { border-left: 3px solid #2980b9; }
