@@ -1,7 +1,6 @@
 ---
 permalink: /
-# 這裡將標題留空，防止模板自動生成頂部大標題
-title: "" 
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
@@ -11,19 +10,16 @@ redirect_from:
 {% include base_path %}
 
 <style>
-  /* 隱藏可能殘留的頁面標題（針對某些模板） */
   .page__title {
     display: none !important;
   }
 
-  /* 1. 寬幅佈局容器 */
   .main-wrapper {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  /* 2. 頂部兩欄 (Education & Biography) */
   .top-section {
     display: flex;
     justify-content: space-between;
@@ -31,7 +27,6 @@ redirect_from:
     margin-bottom: 30px;
   }
 
-  /* 調整左欄 Education (1份) 與右欄 Bio (1.4份) 的比例，讓文字更舒展 */
   .edu-column { flex: 1; min-width: 350px; }
   .bio-column { flex: 1.4; }
 
@@ -44,7 +39,6 @@ redirect_from:
     margin-bottom: 20px;
   }
 
-  /* 教育項樣式 */
   .edu-item {
     display: flex;
     align-items: center;
@@ -55,7 +49,7 @@ redirect_from:
     width: 60px;
     height: 60px;
     margin-right: 15px;
-    object-fit: contain; /* 確保校徽不變形 */
+    object-fit: contain;
     background: #ffffff;
   }
 
@@ -63,7 +57,6 @@ redirect_from:
   .uni-name { font-weight: 700; color: #1a252f; font-size: 1.05em; }
   .deg-name { color: #5d6d7e; font-size: 0.92em; font-style: italic; }
 
-  /* 簡介樣式 (潤色版) */
   .bio-text {
     line-height: 1.8;
     text-align: justify;
@@ -71,7 +64,6 @@ redirect_from:
     font-size: 1.05em;
   }
 
-  /* 3. 研究興趣 (橫向四卡片) */
   .interests-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -108,7 +100,6 @@ redirect_from:
     color: #2c3e50;
   }
 
-  /* 響應式佈局 */
   @media (max-width: 900px) {
     .top-section { flex-direction: column; }
     .interests-grid { grid-template-columns: repeat(2, 1fr); }
@@ -200,7 +191,6 @@ redirect_from:
   </div>
 
   <style>
-    /* 列表基礎樣式 */
     .news-list { list-style: none; padding: 0; margin-bottom: 0; }
     .news-item { 
       margin-bottom: 12px; 
@@ -211,23 +201,9 @@ redirect_from:
     }
     .news-item:hover { border-left: 3px solid #2980b9; }
     .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
-
-    /* 初始狀態：隱藏多餘新聞 */
     .extra-news { display: none; }
-
-    /* 當選取框被選中時：顯示所有 extra-news */
-    #news-toggle:checked ~ .news-list .extra-news {
-      display: block;
-    }
-
-    /* 按鈕容器：左對齊 */
-    .btn-wrap { 
-      text-align: left; 
-      margin-top: 15px; 
-      padding-left: 10px; 
-    }
-
-    /* 按鈕樣式 */
+    #news-toggle:checked ~ .news-list .extra-news { display: block; }
+    .btn-wrap { text-align: left; margin-top: 15px; padding-left: 10px; }
     .more-btn, .less-btn {
       display: inline-block;
       border: 1px solid #2980b9;
@@ -239,15 +215,8 @@ redirect_from:
       font-size: 0.85em;
       transition: all 0.3s ease;
     }
-    
-    .more-btn:hover, .less-btn:hover { 
-      background-color: #2980b9; 
-      color: white; 
-    }
-
-    /* 切換按鈕文字顯示 */
+    .more-btn:hover, .less-btn:hover { background-color: #2980b9; color: white; }
     .less-btn { display: none; }
-    
     #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
     #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
   </style>
