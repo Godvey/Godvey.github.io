@@ -135,7 +135,7 @@ redirect_from:
         <img src="/images/CITYU1.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">City University of Macau</div>
-          <div class="info-desc">Assistant Professor, Faculty of Data Science</div>
+          <div class="info-desc">Faculty of Data Science</div>
         </div>
       </div>
 
@@ -151,14 +151,14 @@ redirect_from:
         <img src="/images/SYSU.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">Sun Yat-sen University</div>
-          <div class="info-desc">M.Sc. (2020)</div>
+          <div class="info-desc">M.Sc. in Surveying and Mapping Engineering (2020)</div>
         </div>
       </div>
       <div class="info-item">
         <img src="/images/CUG.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">CUG</div>
-          <div class="info-desc">B.Sc. (2017)</div>
+          <div class="info-desc">B.Sc. in Remote Sensing Science and Technology (2017)</div>
         </div>
       </div>
     </div>
