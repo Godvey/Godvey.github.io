@@ -177,8 +177,8 @@ redirect_from:
   <ul class="news-list" style="font-size: 1em !important;">
     <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Conference on Guidance, Navigation, and Control (ICGNC)</b>.</li>
     <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Journal of Micro Air Vehicles (IJMAV)</b>.</li>
-    <li class="news-item"><span class="news-date">Mar 2026</span> Our work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
     <li class="news-item"><span class="news-date">Mar 2026</span> Another research paper has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
+    <li class="news-item"><span class="news-date">Mar 2026</span> Our work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
     <li class="news-item"><span class="news-date">Mar 2026</span> The initial construction of our <b>Indoor Motion Capture Experimental Environment</b> has been completed.</li>
 
     <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially funded by the <b>Science and Technology Development Fund (FDCT)</b>, Macau.</li>
