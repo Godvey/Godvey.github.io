@@ -115,7 +115,7 @@ redirect_from:
     <div class="exp-edu-column">
       <div class="section-title">Work Experience</div>
       <div class="info-item">
-        <img src="/images/CITYU.jpg" class="info-logo" alt="CityU">
+        <img src="/images/CITYU1.jpg" class="info-logo" alt="CityU">
         <div class="info-content">
           <div class="info-name">City University of Macau</div>
           <div class="info-desc">Assistant Professor, Faculty of Data Science</div>
