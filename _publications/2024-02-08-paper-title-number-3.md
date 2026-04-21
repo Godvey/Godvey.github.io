@@ -5,7 +5,7 @@ category: manuscripts
 date: 2024-02-08
 venue: 'IEEE Robotics and Automation Letters'
 slidesurl: 'https://academicpages.github.io/files/slides3.pdf'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+#paperurl: 'https://academicpages.github.io/files/paper3.pdf'
 citation: 'Zhan, W., Yu, W., Wang, Y., Hu, T., & Zhu, B. (2024). E-GNN: An Enhanced Method for Multi-Object Tracking with Collective Motion Patterns. IEEE Robotics and Automation Letters, 9(4), 3403-3410.'
 ---
 
