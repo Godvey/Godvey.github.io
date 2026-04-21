@@ -166,10 +166,10 @@ redirect_from:
 
   <div class="section-title">Research Interests</div>
   <div class="interests-grid">
-    <div class="interest-card"><i class="fas fa-robot"></i><span>UAV Swarm<br>Coordination</span></div>
-    <div class="interest-card"><i class="fas fa-microchip"></i><span>Robust &<br>Nonlinear Control</span></div>
-    <div class="interest-card"><i class="fas fa-search-location"></i><span>Autonomous<br>Navigation</span></div>
-    <div class="interest-card"><i class="fas fa-cogs"></i><span>Robotics<br>Applications</span></div>
+    <div class="interest-card"><i class="fas fa-robot"></i><span>Cooperative Formation Control<br>and Applications of UAVs</span></div>
+    <div class="interest-card"><i class="fas fa-microchip"></i><span>Swarm Decision-making,<br>Planning and Control</span></div>
+    <div class="interest-card"><i class="fas fa-search-location"></i><span>Low-altitude<br>Situational Awareness</span></div>
+    <div class="interest-card"><i class="fas fa-cogs"></i><span>Spatial Information<br>Intelligence</span></div>
   </div>
 
 <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
