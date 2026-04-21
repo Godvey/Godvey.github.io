@@ -197,54 +197,83 @@ redirect_from:
     </div>
   </div>
 
- <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
+<h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
 
 <ul class="news-list" id="auto-news-list">
-  <li class="news-item"><span class="news-date">[Apr 2026]</span> Latest News 1...</li>
-  <li class="news-item"><span class="news-date">[Mar 2026]</span> News 2...</li>
-  <li class="news-item"><span class="news-date">[Feb 2026]</span> News 3...</li>
-  <li class="news-item"><span class="news-date">[Jan 2026]</span> News 4...</li>
-  <li class="news-item"><span class="news-date">[Dec 2025]</span> News 5...</li>
-  <li class="news-item"><span class="news-date">[Nov 2025]</span> Old News 6...</li>
-  <li class="news-item"><span class="news-date">[Oct 2025]</span> Old News 7...</li>
+  <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
+  <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
+  <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
+  <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
+  <li class="news-item"><span class="news-date">[Jan 2023]</span> Example news 5...</li>
+  <li class="news-item"><span class="news-date">[Dec 2022]</span> Example news 6...</li>
+  <li class="news-item"><span class="news-date">[Nov 2022]</span> Example news 7...</li>
 </ul>
 
 <div id="btn-container" style="text-align: center; margin-top: 20px; display: none;">
-  <button id="show-more-btn" onclick="toggleNews()" style="background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+  <button id="show-more-btn" onclick="toggleNews()" style="background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 24px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s; font-size: 0.95em;">
     Show More ↓
   </button>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const newsItems = document.querySelectorAll('#auto-news-list .news-item');
-  const btnContainer = document.getElementById('btn-container');
+<style>
+  /* 默認樣式 */
+  .news-list { list-style-type: none; padding-left: 0; }
+  .news-item { 
+    margin-bottom: 12px; 
+    padding-left: 10px; 
+    border-left: 3px solid #f1f1f1; 
+    line-height: 1.6;
+  }
+  .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
+  #show-more-btn:hover { background-color: #2980b9; color: white; }
   
-  // 如果新聞超過 5 條
-  if (newsItems.length > 5) {
-    btnContainer.style.display = 'block'; // 顯示按鈕
-    for (let i = 5; i < newsItems.length; i++) {
-      newsItems[i].style.display = 'none'; // 隱藏 5 條以後的
-      newsItems[i].classList.add('is-hidden'); // 標記為待隱藏
+  /* 初始強制隱藏多餘新聞，防止頁面閃爍 */
+  .news-item:nth-child(n+6) {
+    display: none;
+  }
+</style>
+
+<script>
+  function initNews() {
+    const list = document.getElementById('auto-news-list');
+    if (!list) return;
+    
+    const items = list.getElementsByTagName('li');
+    const btnContainer = document.getElementById('btn-container');
+
+    // 如果總量大於 5 條，則顯示按鈕
+    if (items.length > 5) {
+      btnContainer.style.display = 'block';
     }
   }
-});
 
-function toggleNews() {
-  const hiddenItems = document.querySelectorAll('.is-hidden');
-  const btn = document.getElementById('show-more-btn');
-  const isExpanding = btn.innerText.includes('More');
+  function toggleNews() {
+    const list = document.getElementById('auto-news-list');
+    const items = list.getElementsByTagName('li');
+    const btn = document.getElementById('show-more-btn');
+    
+    // 檢查目前第 6 條是否隱藏
+    const isHidden = window.getComputedStyle(items[5]).display === 'none';
 
-  hiddenItems.forEach(item => {
-    item.style.display = isExpanding ? 'block' : 'none';
-  });
+    if (isHidden) {
+      // 展開：顯示所有項目
+      for (let i = 5; i < items.length; i++) {
+        items[i].style.display = 'block';
+      }
+      btn.innerHTML = 'Show Less ↑';
+    } else {
+      // 收起：隱藏 5 條之後的所有項目
+      for (let i = 5; i < items.length; i++) {
+        items[i].style.display = 'none';
+      }
+      btn.innerHTML = 'Show More ↓';
+    }
+  }
 
-  btn.innerHTML = isExpanding ? 'Show Less ↑' : 'Show More ↓';
-}
+  // 雙重保險：確保頁面加載完成後執行初始化
+  window.onload = initNews;
+  // 針對某些跳轉情況
+  document.addEventListener("DOMContentLoaded", initNews);
 </script>
-
-<style>
-  #show-more-btn:hover { background-color: #2980b9; color: white; }
-</style>
 
 </div>
