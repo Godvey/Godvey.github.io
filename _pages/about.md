@@ -169,31 +169,57 @@ redirect_from:
     <div class="interest-card"><i class="fas fa-cogs"></i><span>Spatial Information<br>Intelligence</span></div>
   </div>
 
-  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
+<h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px; font-size: 1.2em;">News</h2>
 
-  <div class="news-wrapper">
-    <input type="checkbox" id="news-toggle" style="display: none;">
-    <ul class="news-list">
-      <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Conference on Guidance, Navigation, and Control (ICGNC)</b>.</li>
-      <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Journal of Micro Air Vehicles (IJMAV)</b>.</li>
-      <li class="news-item"><span class="news-date">Mar 2026</span> Another research paper has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
-      <li class="news-item"><span class="news-date">Mar 2026</span> Our work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
-      <li class="news-item"><span class="news-date">Mar 2026</span> The initial construction of our <b>Indoor Motion Capture Experimental Environment</b> has been completed.</li>
+<div class="news-wrapper">
+  <input type="checkbox" id="news-toggle" style="display: none;">
+  
+  <ul class="news-list" style="font-size: 0.85em !important;">
+    <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Conference on Guidance, Navigation, and Control (ICGNC)</b>.</li>
+    <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Journal of Micro Air Vehicles (IJMAV)</b>.</li>
+    <li class="news-item"><span class="news-date">Mar 2026</span> Our work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
+    <li class="news-item"><span class="news-date">Mar 2026</span> Another research paper has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
+    <li class="news-item"><span class="news-date">Mar 2026</span> The initial construction of our <b>Indoor Motion Capture Experimental Environment</b> has been completed.</li>
 
-      <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially funded by the <b>Science and Technology Development Fund (FDCT)</b>, Macau.</li>
-      <li class="news-item extra-news"><span class="news-date">Aug 2024</span> Joined the Faculty of Data Science at <b>City University of Macau</b> as an Assistant Professor.</li>
-      <li class="news-item extra-news"><span class="news-date">Jun 2024</span> Successfully obtained the <b>Ph.D. degree</b> certificate.</li>
-      <li class="news-item extra-news"><span class="news-date">Feb 2024</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
-      <li class="news-item extra-news"><span class="news-date">Sep 2023</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
-      <li class="news-item extra-news"><span class="news-date">Aug 2023</span> Our work has been accepted by the <b>International Journal of Robust and Nonlinear Control (IJRNC)</b>.</li>
-      <li class="news-item extra-news"><span class="news-date">Nov 2022</span> Our work was accepted for presentation at the <b>Youth Academic Annual Conference of the Chinese Association of Automation</b>.</li>
-      <li class="news-item extra-news"><span class="news-date">Jun 2021</span> Our work has been published in <b>Biodiversity Science</b>.</li>
-    </ul>
+    <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially funded by the <b>Science and Technology Development Fund (FDCT)</b>, Macau.</li>
+    <li class="news-item extra-news"><span class="news-date">Aug 2024</span> Joined the Faculty of Data Science at <b>City University of Macau</b> as an Assistant Professor.</li>
+    <li class="news-item extra-news"><span class="news-date">Jun 2024</span> Successfully obtained the <b>Ph.D. degree</b> certificate.</li>
+    <li class="news-item extra-news"><span class="news-date">Feb 2024</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
+    <li class="news-item extra-news"><span class="news-date">Sep 2023</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
+    <li class="news-item extra-news"><span class="news-date">Aug 2023</span> Our work has been accepted by the <b>International Journal of Robust and Nonlinear Control (IJRNC)</b>.</li>
+    <li class="news-item extra-news"><span class="news-date">Nov 2022</span> Our work was accepted for presentation at the <b>Youth Academic Annual Conference of the Chinese Association of Automation</b>.</li>
+    <li class="news-item extra-news"><span class="news-date">Jun 2021</span> Our work has been published in <b>Biodiversity Science</b>.</li>
+  </ul>
 
-    <div class="btn-wrap">
-      <label for="news-toggle" class="more-btn">Show More ↓</label>
-      <label for="news-toggle" class="less-btn">Show Less ↑</label>
-    </div>
+  <div class="btn-wrap">
+    <label for="news-toggle" class="more-btn">Show More ↓</label>
+    <label for="news-toggle" class="less-btn">Show Less ↑</label>
   </div>
+</div>
+
+<style>
+  /* 强制覆盖可能的冲突样式 */
+  .news-item { 
+    font-size: 0.85em !important; 
+    margin-bottom: 10px; 
+    padding-left: 10px; 
+    border-left: 3px solid #f1f1f1; 
+    line-height: 1.5;
+  }
+  .extra-news { display: none; }
+  #news-toggle:checked ~ .news-list .extra-news { display: list-item; }
+  .btn-wrap { text-align: left; margin-top: 15px; }
+  .more-btn, .less-btn {
+    border: 1px solid #2980b9;
+    color: #2980b9;
+    padding: 3px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.75em; /* 按钮也相应调小一点 */
+  }
+  #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
+  #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
+  .less-btn { display: none; }
+</style>
 
 </div>
