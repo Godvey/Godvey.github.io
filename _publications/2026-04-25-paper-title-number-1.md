@@ -5,7 +5,7 @@ category: manuscripts
 date: 2026-04-25
 venue: 'International Journal of Micro Air Vehicles'
 slidesurl: 'https://academicpages.github.io/files/slides3.pdf'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+#paperurl: 'https://academicpages.github.io/files/paper3.pdf'
 citation: 'Yi, P., Xie, J., Yu, W., Zhu, B., & Hu, T. (2026). Affine Formation Maneuver Control for Gate-traversing Drone Swarms: Algorithm and Application. International Journal of Micro Air Vehicles (Accepted)'
 ---
 
