@@ -31,8 +31,9 @@ redirect_from:
     margin-bottom: 30px;
   }
 
-  .edu-column { flex: 1.1; }
-  .bio-column { flex: 1; }
+  /* 調整左欄 Education (1份) 與右欄 Bio (1.4份) 的比例，讓文字更舒展 */
+  .edu-column { flex: 1; min-width: 350px; }
+  .bio-column { flex: 1.4; }
 
   .section-title {
     font-size: 1.35em;
@@ -54,20 +55,20 @@ redirect_from:
     width: 60px;
     height: 60px;
     margin-right: 15px;
-    object-fit: cover;
-    border-radius: 4px;
-    background: #f8f9fa;
+    object-fit: contain; /* 確保校徽不變形 */
+    background: #ffffff;
   }
 
   .edu-info { line-height: 1.4; }
   .uni-name { font-weight: 700; color: #1a252f; font-size: 1.05em; }
   .deg-name { color: #5d6d7e; font-size: 0.92em; font-style: italic; }
 
-  /* 簡介樣式 */
+  /* 簡介樣式 (潤色版) */
   .bio-text {
     line-height: 1.8;
     text-align: justify;
     color: #34495e;
+    font-size: 1.05em;
   }
 
   /* 3. 研究興趣 (橫向四卡片) */
@@ -105,30 +106,6 @@ redirect_from:
     font-size: 0.95em;
     font-weight: 600;
     color: #2c3e50;
-  }
-
-  /* 4. 新聞列表樣式 */
-  .news-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-
-  .news-item {
-    margin-bottom: 12px;
-    padding-left: 10px;
-    border-left: 3px solid #f1f1f1;
-    transition: border-left 0.3s;
-    line-height: 1.6;
-  }
-
-  .news-item:hover {
-    border-left: 3px solid #2980b9;
-  }
-
-  .news-date {
-    font-weight: bold;
-    color: #2980b9;
-    margin-right: 10px;
   }
 
   /* 響應式佈局 */
@@ -172,7 +149,9 @@ redirect_from:
     <div class="bio-column">
       <div class="section-title">Biography</div>
       <div class="bio-text">
-        Dr. Wei Yu is an Assistant Professor at the Faculty of Data Science, City University of Macau. His research interests primarily focus on <b>UAV swarm coordination</b>, <b>robust and nonlinear control theory</b>, and autonomous navigation in complex environments. Prior to his current appointment, he conducted postdoctoral research at the <b>Oxford Robotics Institute, University of Oxford</b>.
+        Dr. Wei Yu is an <b>Assistant Professor</b> in the Faculty of Data Science at the <b>City University of Macau</b>. He specializes in the fields of autonomous systems and control theory, with a primary research focus on <b>UAV swarm coordination</b>, <b>robust and nonlinear control</b>, and <b>multi-agent formation reconfiguration</b> in constrained environments. 
+        <br><br>
+        Prior to his current appointment, he served as a <b>Postdoctoral Research Associate</b> at the <b>Oxford Robotics Institute, University of Oxford</b>. His academic work emphasizes bridging the gap between advanced control frameworks and practical robotics implementation, ensuring safety and mission efficiency in complex aerial scenarios.
       </div>
     </div>
   </div>
@@ -197,73 +176,80 @@ redirect_from:
     </div>
   </div>
 
-<h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
+  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
 
-<div class="news-wrapper">
-  <input type="checkbox" id="news-toggle" style="display: none;">
+  <div class="news-wrapper">
+    <input type="checkbox" id="news-toggle" style="display: none;">
 
-  <ul class="news-list">
-    <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
-    <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
-    <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
-    <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-    <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5 (Visible)...</li>
+    <ul class="news-list" id="final-news-list">
+      <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
+      <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
+      <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
+      <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
+      <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5 (Visible)...</li>
 
-    <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6 (Hidden)...</li>
-    <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7 (Hidden)...</li>
-    <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8 (Hidden)...</li>
-  </ul>
+      <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6 (Hidden)...</li>
+      <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7 (Hidden)...</li>
+      <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8 (Hidden)...</li>
+    </ul>
 
-  <div class="btn-wrap">
-    <label for="news-toggle" class="more-btn">Show More ↓</label>
-    <label for="news-toggle" class="less-btn">Show Less ↑</label>
+    <div class="btn-wrap">
+      <label for="news-toggle" class="more-btn">Show More ↓</label>
+      <label for="news-toggle" class="less-btn">Show Less ↑</label>
+    </div>
   </div>
-</div>
 
-<style>
-  /* 列表基礎樣式 */
-  .news-list { list-style: none; padding: 0; margin-bottom: 0; }
-  .news-item { margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #f1f1f1; line-height: 1.6; }
-  .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
+  <style>
+    /* 列表基礎樣式 */
+    .news-list { list-style: none; padding: 0; margin-bottom: 0; }
+    .news-item { 
+      margin-bottom: 12px; 
+      padding-left: 10px; 
+      border-left: 3px solid #f1f1f1; 
+      line-height: 1.6;
+      transition: border-left 0.3s;
+    }
+    .news-item:hover { border-left: 3px solid #2980b9; }
+    .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
 
-  /* 初始狀態：隱藏多餘新聞 */
-  .extra-news { display: none; }
+    /* 初始狀態：隱藏多餘新聞 */
+    .extra-news { display: none; }
 
-  /* 當選取框被選中時：顯示所有 extra-news */
-  #news-toggle:checked ~ .news-list .extra-news {
-    display: block;
-  }
+    /* 當選取框被選中時：顯示所有 extra-news */
+    #news-toggle:checked ~ .news-list .extra-news {
+      display: block;
+    }
 
-  /* 按鈕容器：左對齊並與文字起始線保持一致 */
-  .btn-wrap { 
-    text-align: left; 
-    margin-top: 15px; 
-    padding-left: 10px; 
-  }
+    /* 按鈕容器：左對齊 */
+    .btn-wrap { 
+      text-align: left; 
+      margin-top: 15px; 
+      padding-left: 10px; 
+    }
 
-  /* 按鈕樣式：更輕量、專業 */
-  .more-btn, .less-btn {
-    display: inline-block;
-    border: 1px solid #2980b9;
-    color: #2980b9;
-    padding: 5px 18px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 0.85em;
-    transition: all 0.3s ease;
-  }
-  
-  .more-btn:hover, .less-btn:hover { 
-    background-color: #2980b9; 
-    color: white; 
-  }
+    /* 按鈕樣式 */
+    .more-btn, .less-btn {
+      display: inline-block;
+      border: 1px solid #2980b9;
+      color: #2980b9;
+      padding: 5px 18px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.85em;
+      transition: all 0.3s ease;
+    }
+    
+    .more-btn:hover, .less-btn:hover { 
+      background-color: #2980b9; 
+      color: white; 
+    }
 
-  /* 切換按鈕文字顯示 */
-  .less-btn { display: none; } /* 初始隱藏「收起」 */
-  
-  #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
-  #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
-</style>
+    /* 切換按鈕文字顯示 */
+    .less-btn { display: none; }
+    
+    #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
+    #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
+  </style>
 
 </div>
