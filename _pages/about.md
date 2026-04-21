@@ -199,56 +199,62 @@ redirect_from:
 
 <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
 
-<ul class="news-list" id="final-news-list">
-  <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
-  <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
-  <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
-  <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-  <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5...</li>
-  <li class="news-item"><span class="news-date">[Dec 2022]</span> News Item 6...</li>
-  <li class="news-item"><span class="news-date">[Nov 2022]</span> News Item 7...</li>
-  <li class="news-item"><span class="news-date">[Oct 2022]</span> News Item 8...</li>
-</ul>
+<div class="news-wrapper">
+  <input type="checkbox" id="news-toggle" style="display: none;">
 
-<div id="btn-container-final" style="text-align: center; margin-top: 20px; display: none;">
-  <button id="toggle-btn" onclick="handleToggle()" style="background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 24px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.9em; transition: 0.3s;">
-    Show More ↓
-  </button>
+  <ul class="news-list">
+    <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
+    <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
+    <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
+    <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
+    <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5...</li>
+    
+    <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6...</li>
+    <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7...</li>
+    <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8...</li>
+  </ul>
+
+  <div class="btn-wrap">
+    <label for="news-toggle" class="more-btn">Show More ↓</label>
+    <label for="news-toggle" class="less-btn">Show Less ↑</label>
+  </div>
 </div>
 
 <style>
+  /* 基礎樣式 */
   .news-list { list-style: none; padding: 0; margin-bottom: 0; }
   .news-item { margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #f1f1f1; line-height: 1.6; }
   .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
-  #toggle-btn:hover { background-color: #2980b9; color: white; }
-</style>
 
-<script>
-(function() {
-  var list = document.getElementById('final-news-list');
-  var btnWrap = document.getElementById('btn-container-final');
-  var btn = document.getElementById('toggle-btn');
-  var items = list.getElementsByTagName('li');
+  /* 默認隱藏 5 條之後的所有內容 */
+  .extra-news { display: none; }
 
-  // 第一步：初始化顯示
-  if (items.length > 5) {
-    btnWrap.style.display = 'block'; // 只要超過 5 條，強制顯示按鈕容器
-    for (var i = 5; i < items.length; i++) {
-      items[i].style.display = 'none'; // 隱藏第 6 條及以後
-    }
+  /* 當 checkbox 被選中時（點擊了 Show More），顯示隱藏內容 */
+  #news-toggle:checked ~ .news-list .extra-news {
+    display: block;
   }
 
-  // 第二步：點擊邏輯
-  window.handleToggle = function() {
-    var isCollapsed = btn.innerText.includes('More');
-    
-    for (var i = 5; i < items.length; i++) {
-      items[i].style.display = isCollapsed ? 'block' : 'none';
-    }
-    
-    btn.innerHTML = isCollapsed ? 'Show Less ↑' : 'Show More ↓';
-  };
-})();
-</script>
+  /* 按鈕樣式控制 */
+  .btn-wrap { text-align: center; margin-top: 20px; }
+  .more-btn, .less-btn {
+    display: inline-block;
+    border: 1px solid #2980b9;
+    color: #2980b9;
+    padding: 8px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: 0.3s;
+  }
+  .more-btn:hover, .less-btn:hover { background-color: #2980b9; color: white; }
+
+  /* 初始化按鈕狀態：只顯示 More */
+  .less-btn { display: none; }
+  
+  /* 切換按鈕文字 */
+  #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
+  #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
+</style>
 
 </div>
