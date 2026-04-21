@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 date: 2023-08-29
 venue: 'International Journal of Robust and Nonlinear Control'
-paperurl: 'https://academicpages.github.io/files/paper2.pdf'
+#paperurl: 'https://academicpages.github.io/files/paper2.pdf'
 citation: ' Yu, W., Yi, P., Zhu, B., Liu, H., & Hu, T. (2023). Enhanced affine formation maneuver control using historical acceleration command. International Journal of Robust and Nonlinear Control, 33(18), 11458-11480. (<b>Front Cover Article</b>)'
 ---
 
