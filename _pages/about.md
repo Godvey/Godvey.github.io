@@ -12,23 +12,30 @@ redirect_from:
 <style>
   .page__title { display: none !important; }
 
-  /* 1. 寬幅佈局優化：增加 max-width 使頁面更寬 */
+  /* 1. 寬幅佈局優化：增加 max-width */
   .main-wrapper {
     width: 100%;
     max-width: 1400px; 
     margin: 0 auto;
+    padding: 0 10px;
   }
 
-  /* 2. 頂部佈局比例：加大 bio 權重 (1.6)，增加間距 */
+  /* 2. 核心布局調整：顯著增加左側比例 (2.8)，拉大間距 (80px) 使右側更靠右 */
   .top-section {
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 80px; 
     margin-bottom: 30px;
   }
 
-  .bio-column { flex: 1.6; }
-  .exp-edu-column { flex: 1; min-width: 380px; }
+  .bio-column { 
+    flex: 2.8; /* 增加左側權重，讓每一行容納更多字 */
+  }
+  
+  .exp-edu-column { 
+    flex: 1; 
+    min-width: 320px; /* 縮小最小寬度，讓其更靈活靠右 */
+  }
 
   .section-title {
     font-size: 1.35em;
@@ -39,15 +46,15 @@ redirect_from:
     margin-bottom: 20px;
   }
 
-  /* 3. Biography 專屬樣式：字體更小、行距更緊湊 */
+  /* 3. Biography 樣式微調：字體稍小、行距緊湊，提升對等感 */
   .bio-text {
-    line-height: 1.5; /* 縮小行間距 */
+    line-height: 1.55; 
     text-align: justify;
     color: #34495e;
-    font-size: 0.94em; /* 縮小字體 */
+    font-size: 0.94em; 
   }
 
-  /* 經歷與教育項通用樣式 */
+  /* 經歷與教育項樣式 */
   .info-item {
     display: flex;
     align-items: center;
@@ -55,8 +62,8 @@ redirect_from:
   }
 
   .info-logo {
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
     margin-right: 15px;
     object-fit: contain;
     background: #ffffff;
@@ -64,9 +71,9 @@ redirect_from:
 
   .info-content { line-height: 1.3; }
   .info-name { font-weight: 700; color: #1a252f; font-size: 1.02em; }
-  .info-desc { color: #5d6d7e; font-size: 0.9em; font-style: italic; }
+  .info-desc { color: #5d6d7e; font-size: 0.88em; font-style: italic; }
 
-  /* 研究興趣卡片佈局 */
+  /* 研究興趣卡片 */
   .interests-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
