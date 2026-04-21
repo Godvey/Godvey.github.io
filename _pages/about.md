@@ -122,10 +122,12 @@ redirect_from:
   <div class="top-section">
     <div class="bio-column">
       <div class="section-title">Biography</div>
-      <div class="bio-text">
-        I am <b>Wei Yu</b>, an Assistant Professor and Master Supervisor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences (B.Eng., 2017), followed by Sun Yat-sen University for my M.Sc. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
+<div class="bio-text">
+        I am <b>Wei Yu</b>, an Assistant Professor and Master Supervisor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences, where I earned my B.Eng. in Remote Sensing (2017). I then moved to Sun Yat-sen University, completing both my M.Sc. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
         <br><br>
-        My research primarily focuses on <b>UAV swarm coordination</b>, <b>robust and nonlinear control theory</b>, and autonomous navigation in complex environments. Previously, I conducted postdoctoral research at the Oxford Robotics Institute, University of Oxford.
+        My research focuses on <b>algorithm design for UAV swarm systems</b> and their practical applications in <b>intelligent robotics</b>. I am particularly interested in developing information-augmented strategies to enhance the control performance of autonomous systems. My work has been published in several leading journals and conferences, such as <i>IEEE RAL</i>, <i>IJRNC</i>, <i>IJMAV</i>, <i>DDCLS</i>, and <i>ICGNC</i>.
+        <br><br>
+        Currently, I am leading or participating in 9 research projects. In addition to my research, I actively contribute to the academic community as a reviewer for <i>IEEE RAL</i>, <i>ICRA</i>, and <i>IROS</i>.
       </div>
     </div>
 
