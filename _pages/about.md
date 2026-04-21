@@ -145,7 +145,7 @@ redirect_from:
       <div class="section-title">Education</div>
       
       <div class="edu-item">
-        <img src="/images/bio-photo.jpg" class="edu-logo" alt="SYSU">
+        <img src="/images/SYSU.jpg" class="edu-logo" alt="SYSU">
         <div class="edu-info">
           <div class="uni-name">Sun Yat-sen University</div>
           <div class="deg-name">Ph.D. in Aerospace Science and Technology</div>
@@ -153,7 +153,7 @@ redirect_from:
       </div>
       
       <div class="edu-item">
-        <img src="/images/bio-photo.jpg" class="edu-logo" alt="SYSU">
+        <img src="/images/SYSU.jpg" class="edu-logo" alt="SYSU">
         <div class="edu-info">
           <div class="uni-name">Sun Yat-sen University</div>
           <div class="deg-name">M.Sc. in Surveying and Mapping Engineering</div>
@@ -161,7 +161,7 @@ redirect_from:
       </div>
       
       <div class="edu-item">
-        <img src="/images/bio-photo.jpg" class="edu-logo" alt="CUG">
+        <img src="/images/CUG.jpg" class="edu-logo" alt="CUG">
         <div class="edu-info">
           <div class="uni-name">China University of Geosciences</div>
           <div class="deg-name">B.Sc. in Remote Sensing Science and Technology</div>
