@@ -73,20 +73,21 @@ redirect_from:
   .interest-card i { font-size: 1.3em; color: #3498db; margin-bottom: 6px; display: block; }
   .interest-card span { font-size: 0.85em; font-weight: 600; color: #2c3e50; line-height: 1.1; }
 
-  /* 4. News 样式与折叠逻辑 */
+  /* 4. News 样式与折叠逻辑 - 已调小字体 */
   .news-list { list-style: none; padding: 0; margin-bottom: 0; }
   .news-item { 
-    margin-bottom: 12px; 
+    margin-bottom: 10px; 
     padding-left: 10px; 
     border-left: 3px solid #f1f1f1; 
     line-height: 1.6;
     transition: border-left 0.3s;
-    font-size: 0.94em;
+    /* 调小 News 字体至 0.88em */
+    font-size: 0.88em; 
+    color: #455a64;
   }
   .news-item:hover { border-left: 3px solid #2980b9; }
   .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; white-space: nowrap; }
   
-  /* 隐藏 5 条以后的新闻 */
   .extra-news { display: none; }
   #news-toggle:checked ~ .news-list .extra-news { display: list-item; }
   
@@ -95,11 +96,11 @@ redirect_from:
     display: inline-block;
     border: 1px solid #2980b9;
     color: #2980b9;
-    padding: 5px 18px;
+    padding: 4px 15px;
     border-radius: 15px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 0.85em;
+    font-size: 0.8em;
     transition: all 0.3s ease;
   }
   .more-btn:hover, .less-btn:hover { background-color: #2980b9; color: white; }
@@ -176,12 +177,12 @@ redirect_from:
       <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Conference on Guidance, Navigation, and Control (ICGNC)</b>.</li>
       <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Journal of Micro Air Vehicles (IJMAV)</b>.</li>
       <li class="news-item"><span class="news-date">Mar 2026</span> Our work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
-      <li class="news-item"><span class="news-date">Mar 2026</span> Another work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
-      <li class="news-item"><span class="news-date">Mar 2026</span> The preliminary setup of our <b>Indoor Motion Capture Experimental Environment</b> has been completed.</li>
+      <li class="news-item"><span class="news-date">Mar 2026</span> Another research paper has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
+      <li class="news-item"><span class="news-date">Mar 2026</span> The initial construction of our <b>Indoor Motion Capture Experimental Environment</b> has been completed.</li>
 
-      <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially approved and funded by the <b>Science and Technology Development Fund (FDCT)</b> of Macau.</li>
+      <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially funded by the <b>Science and Technology Development Fund (FDCT)</b>, Macau.</li>
       <li class="news-item extra-news"><span class="news-date">Aug 2024</span> Joined the Faculty of Data Science at <b>City University of Macau</b> as an Assistant Professor.</li>
-      <li class="news-item extra-news"><span class="news-date">Jun 2024</span> Successfully obtained the <b>Ph.D. degree</b>.</li>
+      <li class="news-item extra-news"><span class="news-date">Jun 2024</span> Successfully obtained the <b>Ph.D. degree</b> certificate.</li>
       <li class="news-item extra-news"><span class="news-date">Feb 2024</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
       <li class="news-item extra-news"><span class="news-date">Sep 2023</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
       <li class="news-item extra-news"><span class="news-date">Aug 2023</span> Our work has been accepted by the <b>International Journal of Robust and Nonlinear Control (IJRNC)</b>.</li>
