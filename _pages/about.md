@@ -197,32 +197,54 @@ redirect_from:
     </div>
   </div>
 
-  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
-  <ul class="news-list">
-    <li class="news-item">
-      <span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.
-    </li>
-    <li class="news-item">
-      <span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.
-    </li>
-    <li class="news-item">
-      <span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.
-    </li>
-    <li class="news-item">
-      <span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.
-    </li>
-        <li class="news-item">
-      <span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.
-    </li>
-    <li class="news-item">
-      <span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.
-    </li>
-    <li class="news-item">
-      <span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.
-    </li>
-    <li class="news-item">
-      <span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.
-    </li>
-  </ul>
+ <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
+
+<ul class="news-list" id="auto-news-list">
+  <li class="news-item"><span class="news-date">[Apr 2026]</span> Latest News 1...</li>
+  <li class="news-item"><span class="news-date">[Mar 2026]</span> News 2...</li>
+  <li class="news-item"><span class="news-date">[Feb 2026]</span> News 3...</li>
+  <li class="news-item"><span class="news-date">[Jan 2026]</span> News 4...</li>
+  <li class="news-item"><span class="news-date">[Dec 2025]</span> News 5...</li>
+  <li class="news-item"><span class="news-date">[Nov 2025]</span> Old News 6...</li>
+  <li class="news-item"><span class="news-date">[Oct 2025]</span> Old News 7...</li>
+</ul>
+
+<div id="btn-container" style="text-align: center; margin-top: 20px; display: none;">
+  <button id="show-more-btn" onclick="toggleNews()" style="background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+    Show More ↓
+  </button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const newsItems = document.querySelectorAll('#auto-news-list .news-item');
+  const btnContainer = document.getElementById('btn-container');
+  
+  // 如果新聞超過 5 條
+  if (newsItems.length > 5) {
+    btnContainer.style.display = 'block'; // 顯示按鈕
+    for (let i = 5; i < newsItems.length; i++) {
+      newsItems[i].style.display = 'none'; // 隱藏 5 條以後的
+      newsItems[i].classList.add('is-hidden'); // 標記為待隱藏
+    }
+  }
+});
+
+function toggleNews() {
+  const hiddenItems = document.querySelectorAll('.is-hidden');
+  const btn = document.getElementById('show-more-btn');
+  const isExpanding = btn.innerText.includes('More');
+
+  hiddenItems.forEach(item => {
+    item.style.display = isExpanding ? 'block' : 'none';
+  });
+
+  btn.innerHTML = isExpanding ? 'Show Less ↑' : 'Show More ↓';
+}
+</script>
+
+<style>
+  #show-more-btn:hover { background-color: #2980b9; color: white; }
+</style>
 
 </div>
