@@ -183,7 +183,6 @@ redirect_from:
 
     <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially funded by the <b>Science and Technology Development Fund (FDCT)</b>, Macau.</li>
     <li class="news-item extra-news"><span class="news-date">Aug 2024</span> Joined the Faculty of Data Science at <b>City University of Macau</b> as an Assistant Professor.</li>
-    <li class="news-item extra-news"><span class="news-date">Jun 2024</span> Successfully obtained the <b>Ph.D. degree</b> certificate.</li>
     <li class="news-item extra-news"><span class="news-date">Feb 2024</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
     <li class="news-item extra-news"><span class="news-date">Sep 2023</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
     <li class="news-item extra-news"><span class="news-date">Aug 2023</span> Our work has been accepted by the <b>International Journal of Robust and Nonlinear Control (IJRNC)</b>.</li>
