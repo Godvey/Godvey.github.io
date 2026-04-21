@@ -154,7 +154,7 @@ redirect_from:
       <div class="info-item">
         <img src="/images/CUG.jpg" class="info-logo">
         <div class="info-content">
-          <div class="info-name">CUG</div>
+          <div class="info-name">China University of Geosciences</div>
           <div class="info-desc">B.Sc. (2017)</div>
         </div>
       </div>
