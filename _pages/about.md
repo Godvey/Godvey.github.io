@@ -144,21 +144,21 @@ redirect_from:
         <img src="/images/SYSU.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">Sun Yat-sen University</div>
-          <div class="info-desc">Ph.D. in Aerospace Science (2024)</div>
+          <div class="info-desc">Ph.D. (2024)</div>
         </div>
       </div>
       <div class="info-item">
         <img src="/images/SYSU.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">Sun Yat-sen University</div>
-          <div class="info-desc">M.Sc. in Surveying and Mapping Engineering (2020)</div>
+          <div class="info-desc">M.Sc. (2020)</div>
         </div>
       </div>
       <div class="info-item">
         <img src="/images/CUG.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">CUG</div>
-          <div class="info-desc">B.Sc. in Remote Sensing Science and Technology (2017)</div>
+          <div class="info-desc">B.Sc. (2017)</div>
         </div>
       </div>
     </div>
