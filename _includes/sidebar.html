@@ -21,5 +21,14 @@
       {% include nav_list nav=page.sidebar.nav %}
     {% endif %}
   {% endif %}
+
+  <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #f2f2f2; text-align: center;">
+    <p style="font-size: 0.75em; color: #7f8c8d; margin-bottom: 10px; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;">
+      Scan for Mobile View
+    </p>
+    <img src="{{ '/images/qrcode.png' | relative_url }}" 
+         alt="QR Code" 
+         style="width: 125px; height: 125px; border: 1px solid #eee; padding: 5px; border-radius: 6px; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: inline-block;">
+  </div>
   </div>
 {% endif %}
