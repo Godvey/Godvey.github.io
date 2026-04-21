@@ -12,7 +12,7 @@ redirect_from:
 <style>
   .page__title { display: none !important; }
 
-  /* 1. 整体容器控制：再窄一点，锁定在 1020px 黄金比例 */
+  /* 1. 整体容器控制 */
   @media (min-width: 64em) {
     .archive, .page {
       width: 100% !important;
@@ -22,7 +22,7 @@ redirect_from:
     }
   }
 
-  /* 2. 上部布局：Biography vs Experience */
+  /* 2. 上部布局 */
   .top-section {
     display: flex;
     justify-content: space-between;
@@ -73,43 +73,39 @@ redirect_from:
   .interest-card i { font-size: 1.3em; color: #3498db; margin-bottom: 6px; display: block; }
   .interest-card span { font-size: 0.85em; font-weight: 600; color: #2c3e50; line-height: 1.1; }
 
-  /* 4. News 自动折叠逻辑 */
-  .news-wrapper { position: relative; }
-  .news-list {
-    list-style: none;
-    padding-left: 5px;
-    margin: 0;
+  /* 4. News 样式与折叠逻辑 */
+  .news-list { list-style: none; padding: 0; margin-bottom: 0; }
+  .news-item { 
+    margin-bottom: 12px; 
+    padding-left: 10px; 
+    border-left: 3px solid #f1f1f1; 
+    line-height: 1.6;
+    transition: border-left 0.3s;
     font-size: 0.94em;
-    line-height: 1.7;
   }
-  .news-item { margin-bottom: 8px; }
-  .news-date { color: #2980b9; font-weight: bold; margin-right: 8px; }
-
-  /* 隐藏 5 条以后的新闻 */
-  .news-item:nth-child(n+6) { display: none; }
-
-  /* 触发开关 */
-  #news-toggle { display: none; }
-  #news-toggle:checked ~ .news-list .news-item { display: list-item; }
-
-  /* 按钮样式 */
-  .more-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 6px 25px;
-    border: 1px solid #3498db;
-    color: #3498db;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.85em;
-    transition: all 0.3s;
-    text-align: center;
-  }
-  .more-btn:hover { background: #3498db; color: #fff; }
+  .news-item:hover { border-left: 3px solid #2980b9; }
+  .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; white-space: nowrap; }
   
-  /* 点击后改变按钮文字 (通过 CSS content) */
-  #news-toggle:checked ~ .more-btn::after { content: "Show Less ↑"; }
-  #news-toggle:not(:checked) ~ .more-btn::after { content: "Show More ↓"; }
+  /* 隐藏 5 条以后的新闻 */
+  .extra-news { display: none; }
+  #news-toggle:checked ~ .news-list .extra-news { display: list-item; }
+  
+  .btn-wrap { text-align: left; margin-top: 15px; padding-left: 10px; }
+  .more-btn, .less-btn {
+    display: inline-block;
+    border: 1px solid #2980b9;
+    color: #2980b9;
+    padding: 5px 18px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+  }
+  .more-btn:hover, .less-btn:hover { background-color: #2980b9; color: white; }
+  .less-btn { display: none; }
+  #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
+  #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
 
   @media (max-width: 1000px) {
     .top-section { flex-direction: column; }
@@ -122,7 +118,7 @@ redirect_from:
   <div class="top-section">
     <div class="bio-column">
       <div class="section-title">Biography</div>
-<div class="bio-text">
+      <div class="bio-text">
         I am <b>Wei Yu</b>, an Assistant Professor and Master Supervisor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences, where I earned my B.Eng. in Remote Sensing (2017). I then moved to Sun Yat-sen University, completing both my M.Sc. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
         <br><br>
         My research focuses on <b>cooperative algorithm design</b> and their practical applications in <b>intelligent robotics</b>. I am particularly interested in developing <b>information-augmented strategies</b> to enhance the control performance of autonomous systems. My work has been published in several journals and conferences, such as <i>IEEE RAL</i>, <i>IJRNC</i>, <i>IJMAV</i>, <i>DDCLS</i>, and <i>ICGNC</i>. I actively contribute to the academic community as a reviewer for <i>IEEE RAL</i>, <i>ICRA</i>, and <i>IROS</i>.
@@ -172,20 +168,25 @@ redirect_from:
     <div class="interest-card"><i class="fas fa-cogs"></i><span>Spatial Information<br>Intelligence</span></div>
   </div>
 
-<h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
+  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
 
   <div class="news-wrapper">
     <input type="checkbox" id="news-toggle" style="display: none;">
     <ul class="news-list">
-      <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
-      <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
-      <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
-      <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-      <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5...</li>
+      <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Conference on Guidance, Navigation, and Control (ICGNC)</b>.</li>
+      <li class="news-item"><span class="news-date">Apr 2026</span> Our work has been accepted by the <b>International Journal of Micro Air Vehicles (IJMAV)</b>.</li>
+      <li class="news-item"><span class="news-date">Mar 2026</span> Our work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
+      <li class="news-item"><span class="news-date">Mar 2026</span> Another work has been accepted by the <b>IEEE Data Driven Control and Learning Systems Conference (DDCLS)</b>.</li>
+      <li class="news-item"><span class="news-date">Mar 2026</span> The preliminary setup of our <b>Indoor Motion Capture Experimental Environment</b> has been completed.</li>
 
-      <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6...</li>
-      <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7...</li>
-      <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8...</li>
+      <li class="news-item extra-news"><span class="news-date">Nov 2025</span> Our research project has been officially approved and funded by the <b>Science and Technology Development Fund (FDCT)</b> of Macau.</li>
+      <li class="news-item extra-news"><span class="news-date">Aug 2024</span> Joined the Faculty of Data Science at <b>City University of Macau</b> as an Assistant Professor.</li>
+      <li class="news-item extra-news"><span class="news-date">Jun 2024</span> Successfully obtained the <b>Ph.D. degree</b>.</li>
+      <li class="news-item extra-news"><span class="news-date">Feb 2024</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
+      <li class="news-item extra-news"><span class="news-date">Sep 2023</span> Our work has been accepted by <b>IEEE Robotics and Automation Letters (RAL)</b>.</li>
+      <li class="news-item extra-news"><span class="news-date">Aug 2023</span> Our work has been accepted by the <b>International Journal of Robust and Nonlinear Control (IJRNC)</b>.</li>
+      <li class="news-item extra-news"><span class="news-date">Nov 2022</span> Our work was accepted for presentation at the <b>Youth Academic Annual Conference of the Chinese Association of Automation</b>.</li>
+      <li class="news-item extra-news"><span class="news-date">Jun 2021</span> Our work has been published in <b>Biodiversity Science</b>.</li>
     </ul>
 
     <div class="btn-wrap">
@@ -193,36 +194,5 @@ redirect_from:
       <label for="news-toggle" class="less-btn">Show Less ↑</label>
     </div>
   </div>
-
-  <style>
-    .news-list { list-style: none; padding: 0; margin-bottom: 0; }
-    .news-item { 
-      margin-bottom: 12px; 
-      padding-left: 10px; 
-      border-left: 3px solid #f1f1f1; 
-      line-height: 1.6;
-      transition: border-left 0.3s;
-    }
-    .news-item:hover { border-left: 3px solid #2980b9; }
-    .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
-    .extra-news { display: none; }
-    #news-toggle:checked ~ .news-list .extra-news { display: block; }
-    .btn-wrap { text-align: left; margin-top: 15px; padding-left: 10px; }
-    .more-btn, .less-btn {
-      display: inline-block;
-      border: 1px solid #2980b9;
-      color: #2980b9;
-      padding: 5px 18px;
-      border-radius: 15px;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 0.85em;
-      transition: all 0.3s ease;
-    }
-    .more-btn:hover, .less-btn:hover { background-color: #2980b9; color: white; }
-    .less-btn { display: none; }
-    #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
-    #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
-  </style>
 
 </div>
