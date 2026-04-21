@@ -199,66 +199,55 @@ redirect_from:
 
 <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
 
-<ul class="news-list" id="my-news-list">
+<ul class="news-list" id="final-news-list">
   <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
   <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
   <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
   <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-  <li class="news-item"><span class="news-date">[Jan 2023]</span> Example news 5...</li>
-  <li class="news-item"><span class="news-date">[Dec 2022]</span> Example news 6...</li>
-  <li class="news-item"><span class="news-date">[Nov 2022]</span> Example news 7...</li>
+  <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5...</li>
+  <li class="news-item"><span class="news-date">[Dec 2022]</span> News Item 6...</li>
+  <li class="news-item"><span class="news-date">[Nov 2022]</span> News Item 7...</li>
+  <li class="news-item"><span class="news-date">[Oct 2022]</span> News Item 8...</li>
 </ul>
 
-<div id="btn-wrap" style="text-align: center; margin-top: 20px;">
-  <button id="more-btn" onclick="toggleNews()" style="display: none; background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 24px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.95em;">
+<div id="btn-container-final" style="text-align: center; margin-top: 20px; display: none;">
+  <button id="toggle-btn" onclick="handleToggle()" style="background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 24px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.9em; transition: 0.3s;">
     Show More ↓
   </button>
 </div>
 
 <style>
-  .news-list { list-style: none; padding: 0; }
+  .news-list { list-style: none; padding: 0; margin-bottom: 0; }
   .news-item { margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #f1f1f1; line-height: 1.6; }
   .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
-  #more-btn:hover { background-color: #2980b9; color: white; transition: 0.3s; }
+  #toggle-btn:hover { background-color: #2980b9; color: white; }
 </style>
 
 <script>
 (function() {
-  function setupNews() {
-    var list = document.getElementById('my-news-list');
-    var btn = document.getElementById('more-btn');
-    if (!list || !btn) return;
+  var list = document.getElementById('final-news-list');
+  var btnWrap = document.getElementById('btn-container-final');
+  var btn = document.getElementById('toggle-btn');
+  var items = list.getElementsByTagName('li');
 
-    var items = list.getElementsByTagName('li');
-    
-    // 如果新聞超過 5 條
-    if (items.length > 5) {
-      btn.style.display = 'inline-block'; // 顯示按鈕
-      for (var i = 5; i < items.length; i++) {
-        items[i].style.display = 'none'; // 隱藏多出的
-      }
-    }
-  }
-
-  // 點擊切換
-  window.toggleNews = function() {
-    var list = document.getElementById('my-news-list');
-    var btn = document.getElementById('more-btn');
-    var items = list.getElementsByTagName('li');
-    var isMore = btn.innerText.includes('More');
-
+  // 第一步：初始化顯示
+  if (items.length > 5) {
+    btnWrap.style.display = 'block'; // 只要超過 5 條，強制顯示按鈕容器
     for (var i = 5; i < items.length; i++) {
-      items[i].style.display = isMore ? 'block' : 'none';
+      items[i].style.display = 'none'; // 隱藏第 6 條及以後
     }
-    btn.innerHTML = isMore ? 'Show Less ↑' : 'Show More ↓';
-  };
-
-  // 確保腳本執行
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupNews);
-  } else {
-    setupNews();
   }
+
+  // 第二步：點擊邏輯
+  window.handleToggle = function() {
+    var isCollapsed = btn.innerText.includes('More');
+    
+    for (var i = 5; i < items.length; i++) {
+      items[i].style.display = isCollapsed ? 'block' : 'none';
+    }
+    
+    btn.innerHTML = isCollapsed ? 'Show Less ↑' : 'Show More ↓';
+  };
 })();
 </script>
 
