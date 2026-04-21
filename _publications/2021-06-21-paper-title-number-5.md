@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 date: 2021-06-21
 venue: 'Biodiversity Science'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+#paperurl: 'https://academicpages.github.io/files/paper3.pdf'
 citation: 'Ma, X., Wang, H., Yu, W., Du, Y., Liang, J., Hu, H., Qiu, S., & Liu, L. (2021). Analysis on the hotspot and conservation gaps of bird biodiversity in Guangdong Province based on MaxEnt model. Biodiversity Science, 29(8): 1097.'
 ---
 
