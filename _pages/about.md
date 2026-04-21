@@ -199,7 +199,7 @@ redirect_from:
 
 <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px;">News</h2>
 
-<ul class="news-list" id="auto-news-list">
+<ul class="news-list" id="my-news-list">
   <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
   <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
   <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
@@ -209,71 +209,57 @@ redirect_from:
   <li class="news-item"><span class="news-date">[Nov 2022]</span> Example news 7...</li>
 </ul>
 
-<div id="btn-container" style="text-align: center; margin-top: 20px; display: none;">
-  <button id="show-more-btn" onclick="toggleNews()" style="background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 24px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s; font-size: 0.95em;">
+<div id="btn-wrap" style="text-align: center; margin-top: 20px;">
+  <button id="more-btn" onclick="toggleNews()" style="display: none; background: none; border: 1px solid #2980b9; color: #2980b9; padding: 8px 24px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.95em;">
     Show More ↓
   </button>
 </div>
 
 <style>
-  /* 默認樣式 */
-  .news-list { list-style-type: none; padding-left: 0; }
-  .news-item { 
-    margin-bottom: 12px; 
-    padding-left: 10px; 
-    border-left: 3px solid #f1f1f1; 
-    line-height: 1.6;
-  }
+  .news-list { list-style: none; padding: 0; }
+  .news-item { margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #f1f1f1; line-height: 1.6; }
   .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
-  #show-more-btn:hover { background-color: #2980b9; color: white; }
-  
-  /* 初始強制隱藏多餘新聞，防止頁面閃爍 */
-  .news-item:nth-child(n+6) {
-    display: none;
-  }
+  #more-btn:hover { background-color: #2980b9; color: white; transition: 0.3s; }
 </style>
 
 <script>
-  function initNews() {
-    const list = document.getElementById('auto-news-list');
-    if (!list) return;
-    
-    const items = list.getElementsByTagName('li');
-    const btnContainer = document.getElementById('btn-container');
+(function() {
+  function setupNews() {
+    var list = document.getElementById('my-news-list');
+    var btn = document.getElementById('more-btn');
+    if (!list || !btn) return;
 
-    // 如果總量大於 5 條，則顯示按鈕
+    var items = list.getElementsByTagName('li');
+    
+    // 如果新聞超過 5 條
     if (items.length > 5) {
-      btnContainer.style.display = 'block';
+      btn.style.display = 'inline-block'; // 顯示按鈕
+      for (var i = 5; i < items.length; i++) {
+        items[i].style.display = 'none'; // 隱藏多出的
+      }
     }
   }
 
-  function toggleNews() {
-    const list = document.getElementById('auto-news-list');
-    const items = list.getElementsByTagName('li');
-    const btn = document.getElementById('show-more-btn');
-    
-    // 檢查目前第 6 條是否隱藏
-    const isHidden = window.getComputedStyle(items[5]).display === 'none';
+  // 點擊切換
+  window.toggleNews = function() {
+    var list = document.getElementById('my-news-list');
+    var btn = document.getElementById('more-btn');
+    var items = list.getElementsByTagName('li');
+    var isMore = btn.innerText.includes('More');
 
-    if (isHidden) {
-      // 展開：顯示所有項目
-      for (let i = 5; i < items.length; i++) {
-        items[i].style.display = 'block';
-      }
-      btn.innerHTML = 'Show Less ↑';
-    } else {
-      // 收起：隱藏 5 條之後的所有項目
-      for (let i = 5; i < items.length; i++) {
-        items[i].style.display = 'none';
-      }
-      btn.innerHTML = 'Show More ↓';
+    for (var i = 5; i < items.length; i++) {
+      items[i].style.display = isMore ? 'block' : 'none';
     }
-  }
+    btn.innerHTML = isMore ? 'Show Less ↑' : 'Show More ↓';
+  };
 
-  // 雙重保險：確保頁面加載完成後執行初始化
-  window.onload = initNews;
-  // 針對某些跳轉情況
-  document.addEventListener("DOMContentLoaded", initNews);
+  // 確保腳本執行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNews);
+  } else {
+    setupNews();
+  }
+})();
 </script>
 
 </div>
