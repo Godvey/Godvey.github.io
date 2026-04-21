@@ -10,9 +10,7 @@ redirect_from:
 {% include base_path %}
 
 <style>
-  .page__title {
-    display: none !important;
-  }
+  .page__title { display: none !important; }
 
   .main-wrapper {
     width: 100%;
@@ -20,15 +18,16 @@ redirect_from:
     margin: 0 auto;
   }
 
+  /* 頂部佈局：Biography 在左 (flex: 1.2)，經歷在右 (flex: 1) */
   .top-section {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
     margin-bottom: 30px;
   }
 
-  .edu-column { flex: 1; min-width: 350px; }
-  .bio-column { flex: 1.4; }
+  .bio-column { flex: 1.2; }
+  .exp-edu-column { flex: 1; min-width: 380px; }
 
   .section-title {
     font-size: 1.35em;
@@ -39,24 +38,7 @@ redirect_from:
     margin-bottom: 20px;
   }
 
-  .edu-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-
-  .edu-logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    object-fit: contain;
-    background: #ffffff;
-  }
-
-  .edu-info { line-height: 1.4; }
-  .uni-name { font-weight: 700; color: #1a252f; font-size: 1.05em; }
-  .deg-name { color: #5d6d7e; font-size: 0.92em; font-style: italic; }
-
+  /* 簡介文字樣式 */
   .bio-text {
     line-height: 1.8;
     text-align: justify;
@@ -64,6 +46,26 @@ redirect_from:
     font-size: 1.05em;
   }
 
+  /* 經歷與教育項通用樣式 */
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  .info-logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    object-fit: contain;
+    background: #ffffff;
+  }
+
+  .info-content { line-height: 1.4; }
+  .info-name { font-weight: 700; color: #1a252f; font-size: 1.02em; }
+  .info-desc { color: #5d6d7e; font-size: 0.92em; font-style: italic; }
+
+  /* 研究興趣卡片佈局 */
   .interests-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -89,16 +91,8 @@ redirect_from:
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
 
-  .interest-card i {
-    font-size: 1.5em;
-    color: #3498db;
-  }
-
-  .interest-card span {
-    font-size: 0.95em;
-    font-weight: 600;
-    color: #2c3e50;
-  }
+  .interest-card i { font-size: 1.5em; color: #3498db; }
+  .interest-card span { font-size: 0.95em; font-weight: 600; color: #2c3e50; }
 
   @media (max-width: 900px) {
     .top-section { flex-direction: column; }
@@ -109,40 +103,48 @@ redirect_from:
 <div class="main-wrapper">
 
   <div class="top-section">
-    <div class="edu-column">
-      <div class="section-title">Education</div>
-      
-      <div class="edu-item">
-        <img src="/images/SYSU.jpg" class="edu-logo" alt="SYSU">
-        <div class="edu-info">
-          <div class="uni-name">Sun Yat-sen University</div>
-          <div class="deg-name">Ph.D. in Aerospace Science and Technology</div>
-        </div>
-      </div>
-      
-      <div class="edu-item">
-        <img src="/images/SYSU.jpg" class="edu-logo" alt="SYSU">
-        <div class="edu-info">
-          <div class="uni-name">Sun Yat-sen University</div>
-          <div class="deg-name">M.Sc. in Surveying and Mapping Engineering</div>
-        </div>
-      </div>
-      
-      <div class="edu-item">
-        <img src="/images/CUG.jpg" class="edu-logo" alt="CUG">
-        <div class="edu-info">
-          <div class="uni-name">China University of Geosciences</div>
-          <div class="deg-name">B.Sc. in Remote Sensing Science and Technology</div>
-        </div>
-      </div>
-    </div>
-
     <div class="bio-column">
       <div class="section-title">Biography</div>
       <div class="bio-text">
-        Dr. Wei Yu is an <b>Assistant Professor</b> in the Faculty of Data Science at the <b>City University of Macau</b>. He specializes in the fields of autonomous systems and control theory, with a primary research focus on <b>UAV swarm coordination</b>, <b>robust and nonlinear control</b>, and <b>multi-agent formation reconfiguration</b> in constrained environments. 
+        Dr. Wei Yu is an <b>Assistant Professor</b> in the Faculty of Data Science at the <b>City University of Macau</b>. He specializes in the fields of autonomous systems and control theory, with a primary research focus on <b>UAV swarm coordination</b>, <b>robust and nonlinear control</b>, and <b>multi-agent formation reconfiguration</b> in complex environments. 
         <br><br>
-        Prior to his current appointment, he served as a <b>Postdoctoral Research Associate</b> at the <b>Oxford Robotics Institute, University of Oxford</b>. His academic work emphasizes bridging the gap between advanced control frameworks and practical robotics implementation, ensuring safety and mission efficiency in complex aerial scenarios.
+        Prior to his current appointment, he served as a <b>Postdoctoral Research Associate</b> at the <b>Oxford Robotics Institute, University of Oxford</b>. His academic work aims to bridge the gap between advanced theoretical control frameworks and real-world robotics applications, ensuring safety and operational efficiency in complex aerial scenarios.
+      </div>
+    </div>
+
+    <div class="exp-edu-column">
+      <div class="section-title">Work Experience</div>
+      <div class="info-item">
+        <img src="/images/CITYU.jpg" class="info-logo" alt="CityU">
+        <div class="info-content">
+          <div class="info-name">City University of Macau</div>
+          <div class="info-desc">Assistant Professor, Faculty of Data Science</div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top: 30px;">Education</div>
+      <div class="info-item">
+        <img src="/images/SYSU.jpg" class="info-logo" alt="SYSU">
+        <div class="info-content">
+          <div class="info-name">Sun Yat-sen University</div>
+          <div class="info-desc">Ph.D. in Aerospace Science and Technology</div>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <img src="/images/SYSU.jpg" class="info-logo" alt="SYSU">
+        <div class="info-content">
+          <div class="info-name">Sun Yat-sen University</div>
+          <div class="info-desc">M.Sc. in Surveying and Mapping Engineering</div>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <img src="/images/CUG.jpg" class="info-logo" alt="CUG">
+        <div class="info-content">
+          <div class="info-name">China University of Geosciences</div>
+          <div class="info-desc">B.Sc. in Remote Sensing Science and Technology</div>
+        </div>
       </div>
     </div>
   </div>
@@ -171,17 +173,16 @@ redirect_from:
 
   <div class="news-wrapper">
     <input type="checkbox" id="news-toggle" style="display: none;">
-
-    <ul class="news-list" id="final-news-list">
+    <ul class="news-list">
       <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
       <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
       <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
       <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-      <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5 (Visible)...</li>
+      <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5...</li>
 
-      <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6 (Hidden)...</li>
-      <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7 (Hidden)...</li>
-      <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8 (Hidden)...</li>
+      <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6...</li>
+      <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7...</li>
+      <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8...</li>
     </ul>
 
     <div class="btn-wrap">
