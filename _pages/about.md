@@ -211,6 +211,18 @@ redirect_from:
     <li class="news-item">
       <span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.
     </li>
+        <li class="news-item">
+      <span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.
+    </li>
+    <li class="news-item">
+      <span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.
+    </li>
+    <li class="news-item">
+      <span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.
+    </li>
+    <li class="news-item">
+      <span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.
+    </li>
   </ul>
 
 </div>
