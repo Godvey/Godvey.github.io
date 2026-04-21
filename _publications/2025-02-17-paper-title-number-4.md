@@ -4,7 +4,7 @@ collection: arxiv
 category: preprints
 date: 2025-04-21
 venue: 'arXiv'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+#paperurl: 'https://academicpages.github.io/files/paper3.pdf'
 citation: 'Zhu B, Yu W, Liu H H T. PID-GM: PID Control with Gain Mapping[J]. arXiv preprint arXiv:2504.15081, 2025.'
 ---
 
