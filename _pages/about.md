@@ -139,7 +139,7 @@ redirect_from:
         </div>
       </div>
 
-      <div class="section-title" style="margin-top: 20px;">Education</div>
+      <div class="section-title" style="margin-top: 50px;">Education Experience</div>
       <div class="info-item">
         <img src="/images/SYSU.jpg" class="info-logo">
         <div class="info-content">
