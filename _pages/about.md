@@ -207,11 +207,11 @@ redirect_from:
     <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
     <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
     <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-    <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5...</li>
-    
-    <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6...</li>
-    <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7...</li>
-    <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8...</li>
+    <li class="news-item"><span class="news-date">[Jan 2023]</span> News Item 5 (Visible)...</li>
+
+    <li class="news-item extra-news"><span class="news-date">[Dec 2022]</span> News Item 6 (Hidden)...</li>
+    <li class="news-item extra-news"><span class="news-date">[Nov 2022]</span> News Item 7 (Hidden)...</li>
+    <li class="news-item extra-news"><span class="news-date">[Oct 2022]</span> News Item 8 (Hidden)...</li>
   </ul>
 
   <div class="btn-wrap">
@@ -221,38 +221,47 @@ redirect_from:
 </div>
 
 <style>
-  /* 基礎樣式 */
+  /* 列表基礎樣式 */
   .news-list { list-style: none; padding: 0; margin-bottom: 0; }
   .news-item { margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #f1f1f1; line-height: 1.6; }
   .news-date { font-weight: bold; color: #2980b9; margin-right: 10px; }
 
-  /* 默認隱藏 5 條之後的所有內容 */
+  /* 初始狀態：隱藏多餘新聞 */
   .extra-news { display: none; }
 
-  /* 當 checkbox 被選中時（點擊了 Show More），顯示隱藏內容 */
+  /* 當選取框被選中時：顯示所有 extra-news */
   #news-toggle:checked ~ .news-list .extra-news {
     display: block;
   }
 
-  /* 按鈕樣式控制 */
-  .btn-wrap { text-align: center; margin-top: 20px; }
+  /* 按鈕容器：左對齊並與文字起始線保持一致 */
+  .btn-wrap { 
+    text-align: left; 
+    margin-top: 15px; 
+    padding-left: 10px; 
+  }
+
+  /* 按鈕樣式：更輕量、專業 */
   .more-btn, .less-btn {
     display: inline-block;
     border: 1px solid #2980b9;
     color: #2980b9;
-    padding: 8px 24px;
-    border-radius: 20px;
+    padding: 5px 18px;
+    border-radius: 15px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9em;
-    transition: 0.3s;
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
   }
-  .more-btn:hover, .less-btn:hover { background-color: #2980b9; color: white; }
-
-  /* 初始化按鈕狀態：只顯示 More */
-  .less-btn { display: none; }
   
-  /* 切換按鈕文字 */
+  .more-btn:hover, .less-btn:hover { 
+    background-color: #2980b9; 
+    color: white; 
+  }
+
+  /* 切換按鈕文字顯示 */
+  .less-btn { display: none; } /* 初始隱藏「收起」 */
+  
   #news-toggle:checked ~ .btn-wrap .more-btn { display: none; }
   #news-toggle:checked ~ .btn-wrap .less-btn { display: inline-block; }
 </style>
