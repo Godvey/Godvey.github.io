@@ -10,109 +10,96 @@ redirect_from:
 {% include base_path %}
 
 <style>
-  /* 1. 強制覆蓋模板側邊欄限制，讓主內容區向兩側擴張 */
+  /* 1. 恢復標準佈局，但微調主內容區的最大寬度 */
+  .page__title { display: none !important; }
+
+  /* 確保在有側邊欄的情況下，內容區不過度寬大 */
   @media (min-width: 64em) {
     .archive, .page {
       width: 100% !important;
-      max-width: 100% !important;
-      padding-right: 0 !important;
-    }
-    /* 讓整個容器居中並拓寬 */
-    #main {
-      max-width: 1500px !important;
-      margin: 0 auto !important;
-      display: flex;
+      padding-right: 20px !important; /* 保留適度右邊距 */
     }
   }
 
-  .page__title { display: none !important; }
-
-  /* 2. 佈局核心：大幅度拓寬 Biography (85% vs 15% 的視覺對比) */
+  /* 2. 佈局核心：在有限空間內優化比例 */
   .top-section {
     display: flex;
     justify-content: space-between;
-    gap: 100px; /* 拉開巨大間距，強行將右側推向邊緣 */
-    margin-bottom: 40px;
+    gap: 40px; /* 適中的間距 */
+    margin-bottom: 30px;
     width: 100%;
   }
 
-  /* 調整比例，讓左側段落橫向極大化 */
+  /* 左側 Biography：佔據約 65% 的空間，讓一行能放更多字 */
   .bio-column { 
-    flex: 3.5; 
+    flex: 2; 
   }
   
+  /* 右側 Experience：佔據約 35% 的空間，且內部內容靠右對齊 */
   .exp-edu-column { 
-    flex: 1; 
-    min-width: 350px;
-    text-align: right; /* 讓文字靠右對齊，更貼合右邊緣 */
+    flex: 1.1; 
+    min-width: 320px;
   }
 
   .section-title {
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: bold;
     color: #2c3e50;
     border-bottom: 2px solid #e1e4e8;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    text-align: left; /* 標題保持左對齊 */
+    padding-bottom: 6px;
+    margin-bottom: 15px;
   }
 
-  /* 3. Biography 文字優化：增加寬度後，行間距可適當放寬一點點 */
+  /* 3. 文字樣式優化 */
   .bio-text {
     line-height: 1.6;
     text-align: justify;
     color: #34495e;
-    font-size: 0.96em;
-    width: 100%;
+    font-size: 0.95em;
   }
 
-  /* 經歷與教育項優化：內容向右靠攏 */
+  /* 經歷欄項目的對齊優化：讓圖標和文字更緊湊地貼向右側 */
   .info-item {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* 關鍵：讓項目整體靠右 */
-    margin-bottom: 18px;
+    margin-bottom: 14px;
+    justify-content: flex-start; /* 保持左對齊，但縮短整體寬度 */
   }
 
   .info-logo {
-    width: 52px;
-    height: 52px;
-    margin-left: 15px; /* 改為左邊距，因為頭像在右邊 */
-    order: 2; /* 讓 Logo 出現在文字右側 */
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
     object-fit: contain;
+    flex-shrink: 0;
   }
 
-  .info-content { 
-    line-height: 1.3; 
-    text-align: right; /* 文字靠右 */
-  }
-  .info-name { font-weight: 700; color: #1a252f; font-size: 1.05em; }
-  .info-desc { color: #5d6d7e; font-size: 0.9em; font-style: italic; }
+  .info-content { line-height: 1.3; }
+  .info-name { font-weight: 700; color: #1a252f; font-size: 0.98em; }
+  .info-desc { color: #5d6d7e; font-size: 0.85em; font-style: italic; }
 
-  /* 研究興趣卡片 */
+  /* 4. 研究興趣卡片：恢復四列佈局，但增加間距 */
   .interests-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin: 30px 0 50px 0;
+    gap: 15px;
+    margin: 20px 0 35px 0;
   }
 
   .interest-card {
     border: 1px solid #d1d9e0;
-    border-radius: 8px;
-    padding: 20px 10px;
+    border-radius: 6px;
+    padding: 15px 5px;
     text-align: center;
-    transition: all 0.3s ease;
+    background: #f8f9fa;
   }
 
-  .interest-card i { font-size: 1.6em; color: #3498db; margin-bottom: 10px; }
-  .interest-card span { font-size: 1em; font-weight: 600; }
+  .interest-card i { font-size: 1.4em; color: #3498db; margin-bottom: 8px; display: block; }
+  .interest-card span { font-size: 0.9em; font-weight: 600; color: #2c3e50; line-height: 1.2; }
 
-  @media (max-width: 1100px) {
-    .top-section { flex-direction: column; gap: 40px; }
-    .info-item { justify-content: flex-start; }
-    .info-content { text-align: left; }
-    .info-logo { order: 0; margin-left: 0; margin-right: 15px; }
+  @media (max-width: 1000px) {
+    .top-section { flex-direction: column; gap: 30px; }
+    .interests-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 
@@ -133,36 +120,36 @@ redirect_from:
     <div class="exp-edu-column">
       <div class="section-title">Work Experience</div>
       <div class="info-item">
+        <img src="/images/CITYU1.jpg" class="info-logo" alt="CityU">
         <div class="info-content">
           <div class="info-name">City University of Macau</div>
           <div class="info-desc">Assistant Professor, Faculty of Data Science</div>
         </div>
-        <img src="/images/CITYU1.jpg" class="info-logo" alt="CityU">
       </div>
 
-      <div class="section-title" style="margin-top: 40px;">Education</div>
+      <div class="section-title" style="margin-top: 25px;">Education</div>
       <div class="info-item">
+        <img src="/images/SYSU.jpg" class="info-logo" alt="SYSU">
         <div class="info-content">
           <div class="info-name">Sun Yat-sen University</div>
-          <div class="info-desc">Ph.D. (2024)</div>
+          <div class="info-desc">Ph.D. in Aerospace Science and Technology (2024)</div>
         </div>
-        <img src="/images/SYSU.jpg" class="info-logo" alt="SYSU">
       </div>
       
       <div class="info-item">
+        <img src="/images/SYSU.jpg" class="info-logo" alt="SYSU">
         <div class="info-content">
           <div class="info-name">Sun Yat-sen University</div>
-          <div class="info-desc">M.Sc. (2020)</div>
+          <div class="info-desc">M.Sc. in Surveying and Mapping Engineering (2020)</div>
         </div>
-        <img src="/images/SYSU.jpg" class="info-logo" alt="SYSU">
       </div>
       
       <div class="info-item">
-        <div class="info-content">
-          <div class="info-name">CUG</div>
-          <div class="info-desc">B.Sc. (2017)</div>
-        </div>
         <img src="/images/CUG.jpg" class="info-logo" alt="CUG">
+        <div class="info-content">
+          <div class="info-name">China University of Geosciences</div>
+          <div class="info-desc">B.Sc. in Remote Sensing Science and Technology (2017)</div>
+        </div>
       </div>
     </div>
   </div>
@@ -175,14 +162,10 @@ redirect_from:
     <div class="interest-card"><i class="fas fa-cogs"></i><span>Robotics<br>Applications</span></div>
   </div>
 
-  <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px; font-size: 1.4em;">News</h2>
-  <div class="news-wrapper">
-    <input type="checkbox" id="news-toggle" style="display: none;">
-    <ul class="news-list">
-      <li class="news-item"><span class="news-date">[Apr 2026]</span> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
-      <li class="news-item"><span class="news-date">[Aug 2024]</span> Joined the Faculty of Data Science at City University of Macau as an Assistant Professor.</li>
-      <li class="news-item"><span class="news-date">[May 2024]</span> Awarded "Finalist" for the Best Paper Award at the DDCLS 2024 conference.</li>
-      <li class="news-item"><span class="news-date">[Feb 2023]</span> Commenced Postdoctoral Research at the Oxford Robotics Institute, University of Oxford.</li>
-    </ul>
-  </div>
+  <div class="section-title">News</div>
+  <ul style="list-style: none; padding-left: 5px; font-size: 0.95em; line-height: 1.7;">
+    <li><b style="color: #2980b9;">[Apr 2026]</b> Our paper on UAV formation control was accepted for presentation at ICGNC 2026.</li>
+    <li><b style="color: #2980b9;">[Aug 2024]</b> Joined City University of Macau as an Assistant Professor.</li>
+    <li><b style="color: #2980b9;">[May 2024]</b> Awarded "Finalist" for Best Paper Award at DDCLS 2024.</li>
+  </ul>
 </div>
