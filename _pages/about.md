@@ -167,7 +167,7 @@ redirect_from:
     <div class="interest-card"><i class="fas fa-robot"></i><span>Cooperative Control<br>and UAV Applications</span></div>
     <div class="interest-card"><i class="fas fa-microchip"></i><span>Swarm Intelligence: Decision,<br>Planning and Control</span></div>
     <div class="interest-card"><i class="fas fa-search-location"></i><span>Low-altitude<br>Situational Awareness</span></div>
-    <div class="interest-card"><i class="fas fa-cogs"></i><span>Geospatial Intelligence<br></span></div>
+    <div class="interest-card"><i class="fas fa-cogs"></i><span>Geospatial Information<br>Intelligence</span></div>
   </div>
 
 <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px; font-size: 1.2em;">News</h2>
