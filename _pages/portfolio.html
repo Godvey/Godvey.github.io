@@ -28,59 +28,64 @@ author_profile: true
     overflow: hidden;
   }
 
-  /* 成员列表响应式 */
-  .member-grid {
+  /* 左右分栏容器 */
+  .members-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  .member-item {
-    flex: 1 1 calc(50% - 20px); 
-    min-width: 320px; /* 增加最小宽度以适应大头像 */
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  @media (max-width: 650px) {
-    .member-item { flex: 1 1 100%; }
+    gap: 40px; /* 左右栏间距 */
+    align-items: flex-start;
   }
 
-  /* 优化后的头像样式：更大、抗锯齿 */
+  /* 每栏的样式 */
+  .member-column {
+    flex: 1 1 320px; /* 确保最小宽度，不足时自动换行 */
+  }
+
+  /* 成员单项样式 */
+  .member-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  /* 优化后的头像样式 */
   .member-img {
-    width: 115px;   /* 调大头像尺寸 */
-    height: 115px; 
-    border-radius: 10px; /* 略微增加圆角半径 */
-    margin-right: 20px;
+    width: 110px;   /* 适配分栏，稍微调整尺寸 */
+    height: 110px; 
+    border-radius: 10px;
+    margin-right: 15px;
     object-fit: cover;
     object-position: top;
     flex-shrink: 0;
     border: 1px solid #eee;
     background-color: #f9f9f9;
-
-    /* --- 🛡️ 消除锯齿与平滑边缘关键属性 --- */
-    image-rendering: -webkit-optimize-contrast; /* 提高对比清晰度 */
-    transform: translateZ(0);                 /* 开启硬件加速使边缘平滑 */
-    backface-visibility: hidden;              /* 辅助平滑渲染 */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);   /* 增加微弱阴影掩盖边缘像素毛刺 */
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
 
   .member-name { 
     font-weight: bold; 
-    font-size: 1.15em; /* 名字相应调大 */
+    font-size: 1.1em; 
     color: #2c3e50; 
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     display: block;
   }
-  .status-current { color: #27ae60; font-size: 0.88em; font-weight: 500; }
-  .status-alumni { color: #7f8c8d; font-size: 0.88em; }
+  .status-current { color: #27ae60; font-size: 0.85em; font-weight: 500; }
+  .status-alumni { color: #7f8c8d; font-size: 0.85em; }
   .next-step { 
     color: #95a5a6; 
-    font-size: 0.85em; 
+    font-size: 0.82em; 
     font-style: italic; 
-    margin-top: 4px; 
+    margin-top: 3px; 
     display: block; 
-    line-height: 1.3;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .members-container { gap: 20px; }
+    .member-column { flex: 1 1 100%; }
   }
 </style>
 
@@ -113,86 +118,100 @@ author_profile: true
 
 <h2 style="border-bottom: 2px solid #2980b9; color: #2c3e50; margin-top: 50px;">Members</h2>
 
-<h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9; font-size: 1.1em;">Graduate Students</h3>
-<div class="member-grid">
-  <div class="member-item">
-    <img src="/images/2027-lzp.jpg" class="member-img">
-    <div>
-      <span class="member-name">Zuopeng Li</span>
-      <span class="status-current">M.Sc. Student (In Progress)</span>
+<div class="members-container">
+  
+  <div class="member-column">
+    <h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9; font-size: 1.1em; margin-bottom: 20px;">Graduate Students</h3>
+    
+    <div class="member-item">
+      <img src="/images/2027-lzp.jpg" class="member-img">
+      <div>
+        <span class="member-name">Zuopeng Li</span>
+        <span class="status-current">M.Sc. Student (In Progress)</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2026-dzy.jpg" class="member-img">
+      <div>
+        <span class="member-name">Ziyi Dai</span>
+        <span class="status-alumni">M.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: Engineer at [Company Name]</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2026-jjm1.jpg" class="member-img">
+      <div>
+        <span class="member-name">Jiamin Jin</span>
+        <span class="status-alumni">M.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: Engineer at [Company Name]</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2026-gzh.jpg" class="member-img">
+      <div>
+        <span class="member-name">Zhuoheng Gu</span>
+        <span class="status-alumni">M.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: Engineer at [Company Name]</span>
+      </div>
     </div>
   </div>
-  <div class="member-item">
-    <img src="/images/2026-dzy.jpg" class="member-img">
-    <div>
-      <span class="member-name">Ziyi Dai</span>
-      <span class="status-alumni">M.Sc. Graduate (2026)</span>
-      <span class="next-step">Next Step: Engineer at [Company Name]</span>
-    </div>
-  </div>
-  <div class="member-item">
-    <img src="/images/2026-jjm1.jpg" class="member-img">
-    <div>
-      <span class="member-name">Jiamin Jin</span>
-      <span class="status-alumni">M.Sc. Graduate (2026)</span>
-      <span class="next-step">Next Step: Engineer at [Company Name]</span>
-    </div>
-  </div>
-  <div class="member-item">
-    <img src="/images/2026-gzh.jpg" class="member-img">
-    <div>
-      <span class="member-name">Zhuoheng Gu</span>
-      <span class="status-alumni">M.Sc. Graduate (2026)</span>
-      <span class="next-step">Next Step: Engineer at [Company Name]</span>
-    </div>
-  </div>
-</div>
 
-<h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9; font-size: 1.1em;">Undergraduate Students</h3>
-<div class="member-grid">
-  <div class="member-item">
-    <img src="/images/2028-zd1.jpg" class="member-img">
-    <div>
-      <span class="member-name">Dong Zhang</span>
-      <span class="status-current">Undergraduate Researcher</span>
+  <div class="member-column">
+    <h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9; font-size: 1.1em; margin-bottom: 20px;">Undergraduate Students</h3>
+    
+    <div class="member-item">
+      <img src="/images/2028-zd1.jpg" class="member-img">
+      <div>
+        <span class="member-name">Dong Zhang</span>
+        <span class="status-current">Undergraduate Researcher</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2028-ljy.jpg" class="member-img">
+      <div>
+        <span class="member-name">Jingyi Li</span>
+        <span class="status-current">Undergraduate Researcher</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2028-yjz2.png" class="member-img">
+      <div>
+        <span class="member-name">Jinzhi Yu</span>
+        <span class="status-current">Undergraduate Researcher</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/bio-photo.jpg" class="member-img">
+      <div>
+        <span class="member-name">Yujun Zhao</span>
+        <span class="status-alumni">B.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: M.Eng. at City University of Macau</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2026-gyb.jpg" class="member-img">
+      <div>
+        <span class="member-name">Yunbo Gong</span>
+        <span class="status-alumni">B.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: M.Sc. at King's College London</span>
+      </div>
+    </div>
+    
+    <div class="member-item">
+      <img src="/images/2026-wmy.jpg" class="member-img">
+      <div>
+        <span class="member-name">Meiyu Wang</span>
+        <span class="status-alumni">B.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: M.Sc. at The University of Sydney</span>
+      </div>
     </div>
   </div>
-  <div class="member-item">
-    <img src="/images/2028-ljy.jpg" class="member-img">
-    <div>
-      <span class="member-name">Jingyi Li</span>
-      <span class="status-current">Undergraduate Researcher</span>
-    </div>
-  </div>
-  <div class="member-item">
-    <img src="/images/2028-yjz2.png" class="member-img">
-    <div>
-      <span class="member-name">Jinzhi Yu</span>
-      <span class="status-current">Undergraduate Researcher</span>
-    </div>
-  </div>
-  <div class="member-item">
-    <img src="/images/bio-photo.jpg" class="member-img">
-    <div>
-      <span class="member-name">Yujun Zhao</span>
-      <span class="status-alumni">B.Sc. Graduate (2026)</span>
-      <span class="next-step">Next Step: M.Eng. at City University of Macau</span>
-    </div>
-  </div>
-  <div class="member-item">
-    <img src="/images/2026-gyb.jpg" class="member-img">
-    <div>
-      <span class="member-name">Yunbo Gong</span>
-      <span class="status-alumni">B.Sc. Graduate (2026)</span>
-      <span class="next-step">Next Step: M.Sc. at King's College London</span>
-    </div>
-  </div>
-  <div class="member-item">
-    <img src="/images/2026-wmy.jpg" class="member-img">
-    <div>
-      <span class="member-name">Meiyu Wang</span>
-      <span class="status-alumni">B.Sc. Graduate (2026)</span>
-      <span class="next-step">Next Step: M.Sc. at The University of Sydney</span>
-    </div>
-  </div>
+
 </div>
