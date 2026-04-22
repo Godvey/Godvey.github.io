@@ -59,24 +59,27 @@ author_profile: true
     font-size: 1.05em; 
     font-weight: bold;
     margin: 0;
-    font-family: sans-serif; /* 确保标题字体风格一致 */
+    font-family: sans-serif;
   }
 
-  /* ⭐ 修改后的 Apply 按钮：同字体、无边框、淡灰底 ⭐ */
+  /* Apply 按钮：淡灰色底、同标题字体、无边框 */
   .apply-btn {
-    background: #eeeeee;            /* 淡淡的灰色底色 */
-    color: #555555 !important;      /* 中灰色文字 */
-    font-size: 0.85em;              /* 稍微调大字体比例 */
-    padding: 2px 12px;
+    background: #eeeeee;
+    color: #555555 !important;
+    font-size: 0.82em;
+    padding: 3px 12px;
     border-radius: 4px;
     text-decoration: none !important;
     transition: background 0.3s;
-    border: none;                   /* 彻底去掉边框 */
-    font-family: inherit;           /* 继承标题的字体风格 */
-    font-weight: 500;               /* 适中的字重 */
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
   .apply-btn:hover {
-    background: #e4e4e4;            /* 悬停时稍微加深 */
+    background: #e4e4e4;
     color: #333333 !important;
   }
 
@@ -127,6 +130,7 @@ author_profile: true
 
   @media (max-width: 850px) {
     .member-column { flex: 1 1 100%; }
+    .apply-btn { padding: 5px 15px; }
   }
 </style>
 
@@ -163,7 +167,7 @@ author_profile: true
   <div class="member-column">
     <div class="column-header">
       <span class="column-title">Undergraduate</span>
-      <a href="mailto:weiyu@cityu.edu.mo?subject=Application for Undergraduate Researcher - L-ORE Lab" class="apply-btn">Apply</a>
+      <a href="mailto:weiyu@cityu.edu.mo?subject=Application for Undergraduate Researcher - L-ORE Lab" target="_blank" class="apply-btn">Apply</a>
     </div>
     <div class="member-item">
       <img src="/images/2028-zd1.jpg" class="member-img">
@@ -181,15 +185,15 @@ author_profile: true
       <img src="/images/bio-photo.jpg" class="member-img">
       <div class="member-info">
         <span class="member-name">Yujun Zhao</span>
-        <span class="status-alumni">B.Eng. Graduate (2026)</span>
-        <span class="next-step">Next Step: M.Eng. at City University of Macau</span>
+        <span class="status-alumni">B.Sc. Graduate (2026)</span>
+        <span class="next-step">Next Step: M.Sc. at City University of Macau</span>
       </div>
     </div>
     <div class="member-item">
       <img src="/images/2026-gyb.jpg" class="member-img">
       <div class="member-info">
         <span class="member-name">Yunbo Gong</span>
-        <span class="status-alumni">B.Eng. Graduate (2026)</span>
+        <span class="status-alumni">B.Sc. Graduate (2026)</span>
         <span class="next-step">Next Step: M.Sc. at King's College London</span>
       </div>
     </div>
@@ -197,59 +201,8 @@ author_profile: true
       <img src="/images/2026-wmy.jpg" class="member-img">
       <div class="member-info">
         <span class="member-name">Meiyu Wang</span>
-        <span class="status-alumni">B.Eng. Graduate (2026)</span>
+        <span class="status-alumni">B.Sc. Graduate (2026)</span>
         <span class="next-step">Next Step: M.Sc. at The University of Sydney</span>
       </div>
     </div>
   </div>
-
-  <div class="member-column">
-    <div class="column-header">
-      <span class="column-title">Master Students</span>
-      <a href="mailto:weiyu@cityu.edu.mo?subject=Application for Master Student - L-ORE Lab" class="apply-btn">Apply</a>
-    </div>
-    <div class="member-item">
-      <img src="/images/2027-lzp.jpg" class="member-img">
-      <div class="member-info"><span class="member-name">Zuopeng Li</span><span class="status-current">M.Eng. Student (In Progress)</span></div>
-    </div>
-    <div class="member-item">
-      <img src="/images/2026-dzy.jpg" class="member-img">
-      <div class="member-info">
-        <span class="member-name">Ziyi Dai</span>
-        <span class="status-alumni">M.Eng. Graduate (2026)</span>
-        <span class="next-step">Next Step: Engineer at [Company Name]</span>
-      </div>
-    </div>
-    <div class="member-item">
-      <img src="/images/2026-jjm1.jpg" class="member-img">
-      <div class="member-info">
-        <span class="member-name">Jiamin Jin</span>
-        <span class="status-alumni">M.Eng. Graduate (2026)</span>
-        <span class="next-step">Next Step: Engineer at [Company Name]</span>
-      </div>
-    </div>
-    <div class="member-item">
-      <img src="/images/2026-gzh.jpg" class="member-img">
-      <div class="member-info">
-        <span class="member-name">Zhuoheng Gu</span>
-        <span class="status-alumni">M.Eng. Graduate (2026)</span>
-        <span class="next-step">Next Step: Engineer at [Company Name]</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="member-column">
-    <div class="column-header">
-      <span class="column-title">Ph.D. Students</span>
-      <a href="mailto:weiyu@cityu.edu.mo?subject=Application for Ph.D. Student - L-ORE Lab" class="apply-btn">Apply</a>
-    </div>
-    <div class="member-item">
-      <img src="/images/bio-photo.jpg" class="member-img">
-      <div class="member-info">
-        <span class="member-name">Opening</span>
-        <span class="status-current">Ph.D. Student Position Available</span>
-      </div>
-    </div>
-  </div>
-
-</div>
