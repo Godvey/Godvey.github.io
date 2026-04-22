@@ -116,7 +116,6 @@ redirect_from:
 </style>
 
 <div class="main-wrapper">
-<h1 style="margin-top: 0; color: #2c3e50;">Home</h1>
 
   <div class="top-section">
     <div class="bio-column">
