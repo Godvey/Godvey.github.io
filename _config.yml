@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Home"
+title                    : "Wei Yu, L-ORE Lab"
 title_separator          : "|"
 name                     : &name "Wei Yu"
-description              : &description "L-ORE Lab: Low-altitude Optimal Robotics & Engineering"
+description              : &description "L-ORE Lab: Low-altitude Optimal Robotics and Engineering"
 url                      : "https://godvey.github.io" 
 baseurl                  : "" # 這裡一定要改回空字符串，因為現在是一級域名了！
 repository               : "Godvey/godvey.github.io"
