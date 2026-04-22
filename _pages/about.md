@@ -120,9 +120,9 @@ redirect_from:
     <div class="bio-column">
       <div class="section-title">Biography</div>
       <div class="bio-text">
-        I am <b>Wei Yu</b>, an Assistant Professor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences, where I earned my B.Eng. in Remote Sensing (2017). I then moved to Sun Yat-sen University, completing both my M.Sc. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
+        I am <b>Wei Yu</b>, an Assistant Professor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences, where I earned my B.Eng. in Remote Sensing (2017). I then moved to Sun Yat-sen University, completing both my M.Eng. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
         <br><br>
-        My research focuses on <b>cooperative algorithm design</b> and their practical applications in <b>intelligent robotics</b>. I am particularly interested in developing <b>information-augmented strategies</b> to enhance the control performance of autonomous systems. My work has been published in several journals and conferences, such as <i>IEEE RAL</i>, <i>IJRNC</i>, <i>IJMAV</i>, <i>DDCLS</i>, and <i>ICGNC</i>. I actively contribute to the academic community as a reviewer for <i>IEEE RAL</i>, <i>ICRA</i>, and <i>IROS</i>.
+        My research focuses on the design of <b>cooperative control algorithms and their practical applications in intelligent robotics</b>. I am particularly interested in developing <b>memory-augmented strategies</b> to enhance the control performance of unmanned swarm systems. My work has been published in several journals and conferences, such as <i>IEEE RAL</i>, <i>IJRNC</i>, <i>IJMAV</i>, <i>DDCLS</i>, and <i>ICGNC</i>. I actively contribute to the academic community as a reviewer for <i>IEEE RAL</i>, <i>ICRA</i>, and <i>IROS</i>.
       </div>
     </div>
 
@@ -148,14 +148,14 @@ redirect_from:
         <img src="/images/SYSU.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">Sun Yat-sen University</div>
-          <div class="info-desc">M.Sc. (2020)</div>
+          <div class="info-desc">M.Eng. (2020)</div>
         </div>
       </div>
       <div class="info-item">
         <img src="/images/CUG.jpg" class="info-logo">
         <div class="info-content">
           <div class="info-name">China University of Geosciences</div>
-          <div class="info-desc">B.Sc. (2017)</div>
+          <div class="info-desc">B.Eng. (2017)</div>
         </div>
       </div>
     </div>
