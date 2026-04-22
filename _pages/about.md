@@ -1,6 +1,7 @@
 ---
 permalink: /
-title: ""
+title: "L-ORE Lab | Wei Yu"
+excerpt: "Home"
 author_profile: true
 redirect_from: 
   - /about/
