@@ -122,7 +122,7 @@ redirect_from:
       <div class="bio-text">
         I am <b>Wei Yu</b>, an Assistant Professor at the Faculty of Data Science, City University of Macau. My academic journey began at the China University of Geosciences, where I earned my B.Eng. in Remote Sensing (2017). I then moved to Sun Yat-sen University, completing both my M.Eng. (2020) and Ph.D. (2024) in Aerospace Science and Technology.
         <br><br>
-        My research focuses on the design of <b>cooperative control algorithms and their practical applications in intelligent robotics</b>. I am particularly interested in developing <b>memory-augmented strategies</b> to enhance the control performance of unmanned swarm systems. My work has been published in several journals and conferences, such as <i>IEEE RAL</i>, <i>IJRNC</i>, <i>IJMAV</i>, <i>DDCLS</i>, and <i>ICGNC</i>. I actively contribute to the academic community as a reviewer for <i>IEEE RAL</i>, <i>ICRA</i>, and <i>IROS</i>.
+        My research focuses on the design of <b>cooperative control algorithm and its practical applications in intelligent robotics</b>. I am particularly interested in developing <b>memory-augmented strategies</b> to enhance the control performance of unmanned swarm systems. My work has been published in several journals and conferences, such as <i>IEEE RAL</i>, <i>IJRNC</i>, <i>IJMAV</i>, <i>DDCLS</i>, and <i>ICGNC</i>. I actively contribute to the academic community as a reviewer for <i>IEEE RAL</i>, <i>ICRA</i>, and <i>IROS</i>.
       </div>
     </div>
 
@@ -163,10 +163,10 @@ redirect_from:
 
   <div class="section-title">Research Interests</div>
   <div class="interests-grid">
-    <div class="interest-card"><i class="fas fa-robot"></i><span>Cooperative Control<br>and Applications of UAVs</span></div>
-    <div class="interest-card"><i class="fas fa-microchip"></i><span>Swarm Decision-making,<br>Planning and Control</span></div>
+    <div class="interest-card"><i class="fas fa-robot"></i><span>Cooperative Control<br>and UAV Applications</span></div>
+    <div class="interest-card"><i class="fas fa-microchip"></i><span>Swarm Intelligence: Decision,<br>Planning and Control</span></div>
     <div class="interest-card"><i class="fas fa-search-location"></i><span>Low-altitude<br>Situational Awareness</span></div>
-    <div class="interest-card"><i class="fas fa-cogs"></i><span>Spatial Information<br>Intelligence</span></div>
+    <div class="interest-card"><i class="fas fa-cogs"></i><span>Geospatial Intelligence<br></span></div>
   </div>
 
 <h2 style="border-bottom: 2px solid #2c3e50; color: #2c3e50; padding-bottom: 8px; margin-top: 40px; font-size: 1.2em;">News</h2>
