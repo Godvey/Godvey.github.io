@@ -2,7 +2,7 @@
 title: "Affine Formation Maneuver Control for Gate-traversing Drone Swarms: Algorithm and Application"
 collection: publications
 category: manuscripts
-date: 2026-04-25
+date: 2026-05-25
 venue: 'International Journal of Micro Air Vehicles'
 slidesurl: 'https://academicpages.github.io/files/slides3.pdf'
 #paperurl: 'https://academicpages.github.io/files/paper3.pdf'
