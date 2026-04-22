@@ -7,28 +7,83 @@ author_profile: true
 
 {% include base_path %}
 
+<style>
+  /* 响应式栅格控制 */
+  .lab-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .lab-card {
+    flex: 1 1 300px; /* 手机端自动堆叠，PC端并排 */
+    text-align: center;
+  }
+  .card-inner {
+    background: #fdfdfd;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+
+  /* 成员列表响应式 */
+  .member-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .member-item {
+    flex: 1 1 calc(50% - 20px); /* PC端两列 */
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  @media (max-width: 600px) {
+    .member-item { flex: 1 1 100%; } /* 手机端一列 */
+  }
+
+  .member-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    margin-right: 15px;
+    object-fit: cover;
+    object-position: top;
+    flex-shrink: 0;
+    border: 1px solid #eee;
+  }
+  .member-name { font-weight: bold; font-size: 1.05em; color: #2c3e50; }
+  .status-current { color: #27ae60; font-size: 0.85em; font-weight: 500; }
+  .status-alumni { color: #7f8c8d; font-size: 0.85em; }
+  .next-step { color: #95a5a6; font-size: 0.82em; font-style: italic; margin-top: 2px; display: block; }
+</style>
+
 <h2 style="border-bottom: 2px solid #2980b9; color: #2c3e50;">Research Infrastructure</h2>
 <p style="line-height: 1.7; text-align: justify; color: #34495e; font-size: 0.95em; margin-bottom: 25px;">
-  The <b>Low-altitude Optimal Robotics & Engineering (L-ORE) Lab</b> focuses on the <b>algorithmic optimization</b> and <b>engineering implementation</b> of low-altitude systems. Our facility features a <b>50-square-meter indoor flight arena</b> integrated with a high-precision <b>motion capture system</b> to support multi-agent coordination. The lab maintains a diverse fleet of approximately <b>20 UAVs</b>, including fully programmable <b>Crazyflie</b> drones, semi-programmable <b>DJI Tello</b> platforms, and various professional <b>DJI consumer-grade drones</b>. Furthermore, our infrastructure extends to specialized multi-rotor (quadrotors/hexarotors) and fixed-wing aircraft. These integrated resources provide a robust foundation for swarm intelligence experiments, with future expansions planned for large-scale outdoor flight missions.
+  The <b>Low-altitude Optimal Robotics and Engineering (L-ORE) Laboratory</b> focuses on the <b>algorithmic optimization</b> and <b>engineering implementation</b> of intelligent autonomous systems. Our facility features a <b>50 m² indoor flight arena</b> integrated with a high-precision <b>motion capture system</b> to support complex multi-agent coordination experiments. The lab maintains a heterogeneous fleet of approximately <b>20 UAVs</b>, including fully programmable <b>Crazyflie</b> nano-quadrotors, <b>DJI Tello</b> platforms, and professional <b>DJI</b> consumer-grade drones. Our resources further extend to customized hexarotors and fixed-wing aircraft, providing a robust foundation for swarm intelligence research and future large-scale outdoor missions.
 </p>
 
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 40px;">
-  <div style="width: 48%; margin-bottom: 15px; text-align: center;">
-    <div style="background: #fdfdfd; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow: hidden;">
-      <img src="/images/ex1.jpg" alt="Indoor Flight Field" style="width: 100%; display: block;">
+<div class="lab-grid">
+  <div class="lab-card">
+    <div class="card-inner">
+      <img src="/images/ex1.jpg" alt="Indoor Flight Arena" style="width: 100%; display: block;">
       <div style="padding: 10px;">
-        <span style="font-weight: bold; color: #2980b9;">Indoor Flight Field</span><br>
-        <small>Motion Capture System</small>
+        <span style="font-weight: bold; color: #2980b9;">Indoor Flight Arena</span><br>
+        <small>High-Precision Motion Capture</small>
       </div>
     </div>
   </div>
 
-  <div style="width: 48%; margin-bottom: 15px; text-align: center;">
-    <div style="background: #fdfdfd; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow: hidden;">
-      <img src="/images/ex2.jpg" alt="Robotics Platforms" style="width: 100%; display: block;">
+  <div class="lab-card">
+    <div class="card-inner">
+      <img src="/images/ex2.jpg" alt="Experimental Platforms" style="width: 100%; display: block;">
       <div style="padding: 10px;">
-        <span style="font-weight: bold; color: #2980b9;">Robotics Platforms</span><br>
-        <small>UAV Swarms</small>
+        <span style="font-weight: bold; color: #2980b9;">Experimental Platforms</span><br>
+        <small>Heterogeneous UAV Swarms</small>
       </div>
     </div>
   </div>
@@ -36,96 +91,86 @@ author_profile: true
 
 <h2 style="border-bottom: 2px solid #2980b9; color: #2c3e50; margin-top: 50px;">Members</h2>
 
-<h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9;">Master Students</h3>
-<div style="display: flex; flex-wrap: wrap; margin-bottom: 20px;">
-  
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2027-lzp.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+<h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9; font-size: 1.1em;">Graduate Students</h3>
+<div class="member-grid">
+  <div class="member-item">
+    <img src="/images/2027-lzp.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Zuopeng Li</span><br>
-      <small style="color: #27ae60;">M.Sc. Student (In Progress)</small>
+      <span class="member-name">Zuopeng Li</span><br>
+      <span class="status-current">M.Eng. Student (In Progress)</span>
     </div>
   </div>
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2026-dzy.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2026-dzy.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Ziyi Dai</span><br>
-      <small style="color: #7f8c8d;">M.Sc. Graduate in 2026</small><br>
-      <small style="color: #95a5a6; font-style: italic;">After Graduation: Engineer at XXX</small>
+      <span class="member-name">Ziyi Dai</span><br>
+      <span class="status-alumni">M.Eng. Graduate (2026)</span><br>
+      <span class="next-step">Next Step: Engineer at [Company Name]</span>
     </div>
   </div>
-  
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2026-jjm1.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2026-jjm1.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Jiamin Jin</span><br>
-      <small style="color: #7f8c8d;">M.Sc. Graduate in 2026</small><br>
-      <small style="color: #95a5a6; font-style: italic;">After Graduation: Engineer at XXX</small>
+      <span class="member-name">Jiamin Jin</span><br>
+      <span class="status-alumni">M.Eng. Graduate (2026)</span><br>
+      <span class="next-step">Next Step: Engineer at [Company Name]</span>
     </div>
   </div>
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2026-gzh.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2026-gzh.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Zhuoheng Gu</span><br>
-      <small style="color: #7f8c8d;">M.Sc. Graduate in 2026</small><br>
-      <small style="color: #95a5a6; font-style: italic;">After Graduation: Engineer at XXX</small>
+      <span class="member-name">Zhuoheng Gu</span><br>
+      <span class="status-alumni">M.Eng. Graduate (2026)</span><br>
+      <span class="next-step">Next Step: Engineer at [Company Name]</span>
     </div>
   </div>
 </div>
 
-<h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9;">Undergraduate Students</h3>
-<div style="display: flex; flex-wrap: wrap;">
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2028-zd1.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+<h3 style="color: #2c3e50; background: #f1f8ff; padding: 8px 15px; border-left: 5px solid #2980b9; font-size: 1.1em;">Undergraduate Students</h3>
+<div class="member-grid">
+  <div class="member-item">
+    <img src="/images/2028-zd1.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Dong Zhang</span><br>
-      <small style="color: #27ae60;">Undergraduate Researcher</small>
+      <span class="member-name">Dong Zhang</span><br>
+      <span class="status-current">Undergraduate Researcher</span>
     </div>
   </div>
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2028-ljy.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2028-ljy.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Jingyi Li</span><br>
-      <small style="color: #27ae60;">Undergraduate Researcher</small>
+      <span class="member-name">Jingyi Li</span><br>
+      <span class="status-current">Undergraduate Researcher</span>
     </div>
   </div>
-  
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2028-yjz2.png" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2028-yjz2.png" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Jinzhi Yu</span><br>
-      <small style="color: #27ae60;">Undergraduate Researcher</small>
+      <span class="member-name">Jinzhi Yu</span><br>
+      <span class="status-current">Undergraduate Researcher</span>
     </div>
   </div>
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/bio-photo.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/bio-photo.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Yujun Zhao</span><br>
-      <small style="color: #7f8c8d;">B.Sc. Graduate in 2026</small><br>
-      <small style="color: #95a5a6; font-style: italic;">After Graduation: Master at City University of Macau</small>
+      <span class="member-name">Yujun Zhao</span><br>
+      <span class="status-alumni">B.Eng. Graduate (2026)</span><br>
+      <span class="next-step">Next Step: M.Eng. at City University of Macau</span>
     </div>
   </div>
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2026-gyb.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2026-gyb.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Yunbo Gong</span><br>
-      <small style="color: #7f8c8d;">B.Sc. Graduate in 2026</small><br>
-      <small style="color: #95a5a6; font-style: italic;">After Graduation: Master at King's College London</small>
+      <span class="member-name">Yunbo Gong</span><br>
+      <span class="status-alumni">B.Eng. Graduate (2026)</span><br>
+      <span class="next-step">Next Step: M.Sc. at King's College London</span>
     </div>
   </div>
-
-  <div style="width: 50%; display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="/images/2026-wmy.jpg" style="width: 100px; height: 100px; border-radius: 8px; margin-right: 20px; object-fit: cover; object-position: top; flex-shrink: 0;">
+  <div class="member-item">
+    <img src="/images/2026-wmy.jpg" class="member-img">
     <div>
-      <span style="font-weight: bold; font-size: 1.1em;">Meiyu Wang</span><br>
-      <small style="color: #7f8c8d;">B.Sc. Graduate in 2026</small><br>
-      <small style="color: #95a5a6; font-style: italic;">After Graduation: Master at The University of Sydney</small>
+      <span class="member-name">Meiyu Wang</span><br>
+      <span class="status-alumni">B.Eng. Graduate (2026)</span><br>
+      <span class="next-step">Next Step: M.Sc. at The University of Sydney</span>
     </div>
   </div>
 </div>
